@@ -1,0 +1,22 @@
+Process for values included in GALEX_nuv_fuv_flux.csv file:
+
+•Gather and list redshift values
+•NUV and FUV Pixel Values:
+	⁃Using downloaded file sources listed in tar_file_names.csv located in /home/depot/WIYN/GALEX
+	⁃extract files and open in ds9 to retrieve pixel value
+		⁃only include file values from -int type 
+		⁃pixel value 1.5 arcsec/pixel
+		⁃“intensity” map (counts/sex)
+		⁃reference: http://www.galex.caltech.edu/researcher/techdoc-ch4.html
+		⁃If exact pixel value of source was 0, I used the pixel with a value closest to the target as the pixel value
+		⁃If there was not one near, I listed it as 0
+•Convert the Pixel values into values of flux (erg sec-1 cm-1 Å-1):
+	⁃(Pixel value = CPS)
+	⁃NUV: Flux = 2.06 x 10^-16 x CPS
+	⁃FUV: Flux = 1.40 x 10^-15 x CPS
+	⁃Reference: http://asd.gsfc.nasa.gov/archive/galex/FAQ/counts_background.html
+•Convert the NUV and FUV flux values (erg sec-1 cm-1 Å-1) to luminosity values (erg s-1 Å-1):
+	⁃convert redshift values to distance (D) in cm
+	Reference site:
+	converting redshift to Mpc: http://hyperphysics.phy-astr.gsu.edu/hbase/astro/hubble.html#c3
+	⁃Luminosity = flux(4pi(D)^2)

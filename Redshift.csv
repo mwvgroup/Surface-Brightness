@@ -1,0 +1,117 @@
+Name,Host Galaxy,Host Galaxy RA, Host Galaxy Dec,zHELIO from host,Host z Group/Name,Host z Reference,Host z Reference Code,Spectral Subtype,Classification Name/Group,Type Reference,Type Reference Code,ATel/CBET,Discovery Group/Individual,Discovery Reference,SN R.A.,SN Dec.,tmax,zCMB,zHELIO from SN,Citation for SN,Other Notes
+SN2014J,NGC 3034,55:52.7,+69:40:46,0.000677,Third Reference Catalogue of Bright Galaxies,de Vaucouleurs  et al. (1991),DV91,Ia-VH,Y. Cao ,Cao et al. (2014),Cao14,ATel 5786 CBET 3792,Fossey,Fossey (2014),55:42.1,+69:40:26.0,20140201,0.0009406,0.000677,,galaxy aka Messier 82 and supernova aka PSN J09554214+6940260
+SN2014aa,NGC 3861,45:03.9,+19:58:25,0.016982,The Arecibo Galaxy Environment Survey ,Cortese et al. (2008),Cort08,Ia,Asiago; PESSTO ,Tomasella et al. (2014); Blagorodnova et al. (2014),Toma14; Blag14,ATel 5958 ATel 5961 CBET 3823,Arbour,Arbour (2014),45:03.6,+19:58:25.4,20140316,0.01807,0.01,Blagorodnova et al.(2014),supernova aka PSN J11450358+1958254
+LSQ14ahm,LCRS B113847.5-120647,41:20.0,-12:23:26,,,,,Ia,PESSTO,Blagorodnova et al. (2014),Blag14,ATel 5961 ATel 3812,LSQ,Hadjiyska et al. (2011),41:22.4,-12:23:57.5,20140319,,0.05,Blagorodnova et al.(2014),supernova aka CSS140325:114122-122357
+LSQ14xi,2MASX J12304088-1346236,30:40.9,-13:46:24,0.050778,6dF Galaxy Survey,Jones et al. (2009),Jones09,Ia,PESSTO,Blagorodnova et al. (2014),Blag14,ATel 5934 ATel 3812 ,LSQ ,Hadjiyska et al. (2011),30:40.3,-13:46:29.5,20140306,0.05194,0.05,Blagorodnova et al.(2014),
+LSQ14age,,,,,,,,Ia,PESSTO,M. Fraser et al.(2014),Fraser14,ATel 5968 ATel 3812,LSQ,Hadjiyska et al. (2011),24:08.0, -13:26:40.27,20140312,,0.06,M. Fraser et al.(2014),
+PS1-14ra,IC 1044,41:29.0,+09:25:51,0.028103,The Updated Zwicky Catalog,Falco et al. (1998),Falco98,Ia,PESSTO,Walton et al. (2014),Walt14,ATel 5957 ATel 2668,PS1,Valenti et al(2010),41:28.4,+09:25:58.7,20140307,0.02882,0.03,Walton et al. (2014),
+PSNJ15044009+1237540,NGC 5837,04:40.6,+12:38:00,0.028723,The IRAS 1.2 Jy Survey,Fisher et al. (1995),Fisher95,Ia,PESSTO,Walton et al. (2014),Walt14,ATel 5970 CBET 3830,Leonini,Leonini et al. (2014),04:40.1,+12:37:54.0,20140310,0.02932,0.03,Walton et al. (2014),supernova aka SN2014ac
+LSQ14aeg,2MASX J10193682+1933131,19:36.8,+19:33:14,0.064676,SDSS,SDSS Data Release 6 (2007),SDSSDR6,Ia,PESSTO,Walton et al. (2014),Walt14,ATel 5970 ATel 3812,LSQ,Hadjiyska et al.(2011),19:36.8,+19:33:20.4,20140310,0.06575,0.06,Walton et al. (2014),supernova aka MLS140308:101937+193321
+PS1-14rx,SDSS J124653.32+144748.4,46:53.3,+14:47:48,0.066559,SDSS,SDSS Data Release 4(2005),SDSSDR4,Ia,PESSTO,Walton et al.(2014),Walt14,ATel 5970 ATel 2668,PS1,Valenti et al.(2010),46:53.4,+14:47:50.1,20140316,0.06761,0.06,Walton et al. (2014),
+LSQ14act,2MASX J15594429-1026396,59:44.3,-10:26:40,0.059091,6dF Galaxy Survey,Jones et al. (2009),Jones09,Ia,PESSTO,Blagorodnova et al. (2014),Blag14,ATel 5961 ATel 3812,LSQ, Hadjiyska et al.(2011),59:44.6,-10:26:40.8,20140308,0.05949,0.06,Blagorodnova et al.(2014),;
+CSS140425:161024+470440,SDSS J161023.48+470439.5,10:23.5,+47:04:40,,,,,Ia,Konidaris;Balam ,Konidaris et al. (2014); Balam et al. (2014),Ko14; Balam14,ATel 6113 CBET 3866,CRTS,Drake et al. (2014),10:23.6,+47:04:40.3,20140503,,0.03,N. Konidaris et al. (2014),supernova aka SN2014aw
+PS1-14xw,NGC 6240,52:58.9,+02:24:03.33,0.02448,Downes,Downes et al. (2014),Downes14,Ia,PESSTO,Benitez et al. (2014),Ben14,ATel 6107 ATel 5850,PS1,Smartt et al. (2014),52:57.6,+02:23:36.6,20140505,0.02458,0.02,Benitez et al.(2014),supernova aka PSN J16525760+022336
+CSS140501:170414+174839,SDSS J170413.29+174857.7,17:04:13,+17:48:58,,,,,Ia,PESSTO,Benitez et al. (2014),Ben14,ATel 6118,CRTS,Drake et al. (2009),04:13.7,+17:48:39.49,20140507,,0.07,Benitez et al.(2014),
+ASASSN-14ay,2MASX J15570268+3725001,57:02.7,+37:25:00,0.030869,SDSS,SDSS Data Release 4 (2005),SDSSDR4,Ia,Asiago,Ochner et al.(2014),Ochner14,ATel 6150 ATel 6161,ASAS-SN, Davis et al.(2014),57:03.1,+37:24:57.78,20140521,0.03109,0.03087,Ochner et al.(2014),
+iPTF14bdn,UGC 8503,30:44.8,+32:45:38.80,0.01555,SDSS, SDSS Data Release 5 (2006),SDSSDR5,Ia-91T,iPTF,Cao et al. (2014),Cao14,ATel 6175,iPTF, Law et al. (2009),30:44.9,+32:45:42.4,20140610,0.01632,0.01558,Cao et al.(2014),supernova aka CSS140606:133045+324542
+PSNJ15024996+4847062,2MASX J15024995+4847010,02:50.0,+48:47:00.78,0.026138,SDSS, SDSS Data Release 3 (2004),SDSSDR3,Ia,Asiago,Ochner et al.(2014),Och14,ATel 6142 ATel 6140 ,Gagliano,Gagliano et al.(2014),02:50.0,+48:47:06.2,20140520,0.02646,0.02614,Ochner et al.(2014), galaxy aka PGC 2325560
+ASASSN-14in,2MASX J18242915+5226380,24:29.2,+52:26:37.9,,,,,Ia,Zhang&Wang,Zhang and Wang (2014),Zhan14,ATel 6545 ATel 6539,ASAS-SN, Nicolas et al. (2014),24:29.6,+52:26:32.83,20141012,,,,
+LSQ14fmg,,,,,,,,Ia-91T,CSP,Taddia et al. (2014),Tad14,ATel 6495,LSQ,Hadjiyska et al. (2011),16:46.1,+15:21:14.1,20141012,,0.06,Taddia et al. (2014),
+iPTF14gdr,2MASX J00275880-0513014,27:58.8,-05:13:01.4,,,,,Ia,iPTF Waszczak,Johansson et al. (2014),Johan14,ATel 6534,iPTF Quimby,Johansson et al. (2014),27:58.3,-05:12:59.5,20141005,,0.07,Johansson et al. (2014),
+SN2014dk,[DDG2014] J002812.09+070940.1,28:12.1,+07:09:40.1,,,,,Ia,Asiago; iPTF Ukwatta,Tomasella et al. (2014); Johansson et al. (2014),Toma14 Johan14,ATel 6503 ATel 6534 CBET 3994,CRTS,Drake et al. (2014),28:12.0,+07:09:43.9,20141007,,0.038; 0.02,Tomasella et al. (2014); Johansson et al. (2014),SN also called PSNJ00281196+0709439; CSS140925:002812+070944; MLS140927:002812+070944; iPTF14fpg;PS1-14acg; large difference in the found z values from PSN and iPTF
+SN2014dm,NGC 1516A,08:07.4,-08:49:45.3,0.03318,6dF Galaxay Survey,Jones et al.(2009),Jones09,Ia,PESSTO;  Shivvers&Filippenko,Walton et al. (2014); Shivvers and Filippenko (2014),Walt14; SF14,ATel 6516 CBET 3996 CBET 3999,Itagaki,Itagaki (2014),08:07.1,-08:49:37.1,20140928,0.03287,0.033,Walton et al. (2014),SN aka PSN J04080713-0849372 galaxy aka NGC 1524
+iPTF14gnl,LCSB S0066P,23:48.3,-03:51:20.7,0.053727,6dF Galaxay Survey,Jones et al.(2009),Jones09,Ia,iPTF Kasliwal,Papadogiannakis et al. (2014),Papa14,ATel 6598,Johansson,Papadogiannakis et al. (2014),23:48.3,-03:51:27.9,20141023,0.05257,0.05,Papadogiannakis et al. (2014),
+SNhunt263,UGC 4798,08:42.6,+44:48:38.37,0.026762,Third Reference Catalogue of Bright Galaxies,de Vaucouleurs  et al. (1991),DV91,Ia,Asiago,Elias-Rosa et al. (2014),Elias14,ATel 6628,CRTS; Howerton ,Drake et al. (2014); Howerton (2014),08:42.5,+44:48:13.2,20141030,0.02741,0.0268,Elias-Rosa et al.(2014),SN aka PSNJ09084248+4448132 and CSS141026:090842+444815
+ASASSN-14iu,NGC 2771,10:39.7,+50:22:47.47,0.016855,Third Reference Catalogue of Bright Galaxies,de Vaucouleurs  et al. (1991),DV91,Ia,ASAS-SN,Thorstensen et al. (2014),Thorst14,ATel 6571,ASAS-SN,Thorstensen et al. (2014),10:39.5,+50:22:48.26,20141013,0.01742,,,
+LSQ14gde,APMUKS(BJ) B005813.40-151542.5,00:42.5,-14:59:33.7,,,,,Ia,PESSTO,M. Smith et al. (2014),Smith14,ATel 6769,LSQ,Baltay et al. (2013),00:42.5,-14:59:33.3,20141130,,0.061, M. Smith et al (2014),
+PSNJ03034759+0024146, CGCG 389-070,03:47.5,+00:24:33,0.043059,SDSS,SDSS Data Release 1 (2003),SDSSDR1,Ia,Shivvers&Filippenko,Shivvers and Filippenko (2014),Shivv14,ATel 6757,CRTS ,Drake et al (2009),03:47.6,+00:24:14.6,20141119,0.042406,0.04,Shivvers and Filippenko (2014),SN aka PS1-14abf; CSS141117:030348+002415
+PSNJ10292799+2200468,UGC 5691,29:27.5,+22:00:28.56,0.054453,SDSS,SDSS Data Release 6 (2007),SDSSDR6,Ia,Zhang&Wang; iPTF Hosseinzadeh,Zhang and Wang (2014); Ferretti et al (2014),Zhang14; Ferretti14,ATel 6748; ATel 6764,R. Gagliano; D. Post; J. Newton; T. Puckett; iPTF Ferretti; CRTS, CBAT TOCP Gagliano (2014); Post (2014); Newton (2014); Puckett (2014); Ferretti et al (2014); Drake et al (2009),29:28.0,+22:00:46.8,20141122,0.055515,0.05,Ferretti et al (2014),SN aka iPTF14hvh; CSS141127:102928+220047
+CSS141123:091002+521856,SDSS J091001.89+521856.7,10:01.9,+52:18:56.71,,,,,Ia,Shivvers&Filippenko; iPTF Kulkarni,Shivvers and Filippenko (2014); Papadogiannakis et al. (2014),Shivv14; Papa14,ATel 6757 ATel 6869,CRTS;iPTF,Drake et al (2014); Papadogiannakis et al (2014),10:01.8,+52:18:56.4,20141123,,0.0405,Shivvers and Filippenko (2014),SN aka iPTF14jfw
+PSNJ08351668+4819011,SDSS J083516.33+481901.4,35:16.3,+48:19:01.43,0.042955,SDSS,SDSS Data Release 1 (2003),SDSSDR1,Ia,Tsinghua University-NAOC Transient Survey (TNTS),Zhang et al. (2014),Zhang14,ATel 6852,TNTS, TOCP Zhang et al (2015),35:16.7,+48:19:01.1,20150104,0.043477,,,
+PS15mb,SDSS J085940.13+151113.5,59:40.1,+15:11:13.62,0.028724,Almeida+,Almeida et al. (2011),Alm11,Ia,Asiago; CfA, Noebauer et al (2015); Challis et al (2015),Noebauer15; Challis15,ATel 7212;ATel 7219;ATel 7228;ATel 7229;ATel 7234,PSST; ASAS-SN, K. Smith et al(2015); Brimacombe et al (2015),59:40.2,+15:11:12.5,20150314,0.02968,0.029,Noebauer et al. (2015),SN aka ASASSN-15ez
+PS15mt,SDSS J095444.27+231151.6,54:44.3,+23:11:51.63,,,,,Ia,Foley+,Foley et al. (2015),Fol15,ATel 7250,PSST,Huber et al. (2015),54:44.2,+23:11:53.1,20150324,,0.071,Foley et al. (2015),
+ASASSN-15fj,2MASX J17100856+7443426,10:08.6,+74:43:43,,,,,Ia,CfA,Falco et al. (2015),Fal15,ATel 7257;ATel 7287,ASAS-SN,Krannich et al. (2015),10:08.5,+74:43:42.6,20150316,,0.045,Falco et al. (2015),
+PSNJ08593491+4555343,UGC 04709,59:34.6,+45:55:36.18,0.028101,SDSS,SDSS Data Release 3 (2004),SDSSDR3,Ia,Asiago; CfA,Ochner et al (2015); Challis et al (2015),Ochner15; Challis15,ATel 7222;ATel 7234,Italian Supernova Search Project,Ciabattari et al. (2015),59:34.9,+45:55:34.3,20150316,0.02871,0.0281,Ochner et al. (2015),SN aka PS15tb; Gaia15acx
+PS15sv,2MASX J16131107+0136469,13:11.1,+01:36:47.1,,,,,Ia-91T,PESSTO,Walton et al. (2015),Walton15,ATel 7280;ATel 7308,PSST,K. Smith et al. (2015),13:11.7,+01:35:31.1,20150402,,0.033,Walton et al. (2015),
+ASASSN-15fs,CGCG 229-010,58:40.7,+43:28:06,0.02902,Marzke et al. (1996),Marzke96,Mar-96,Ia,Falco (2015),Falco et al. (2015),Fal15,ATel 7296;ATel 7306,ASAS-SN Brimacombe et al. (2015),Brimacombe (2015),58:40.8,+43:28:07.88,20150401,0.02852,0.02902,Brimacombe et al.(2015), SN aka Gaia15afh PS15aij
+LSQ15aae,2MASX J16301506+0555514,30:15.1,+05:55:51.38,,,,,Ia-91T,Carnegie Supernova Project Taddia (2015),Taddia et al. (2015),Tad15,ATel 7325,LSQ Hadjiyska et al. (2015),Hadjiyska (2015),30:15.7,+05:55:58.73,20150402?,,0.05,Taddia et al.(2015),
+iPTF15xi,SDSS J121227.77+320954.9,12:27.8,+32:09:54.97,,,,,Ia,WISeREP Yaron (2012); CRTS Drake (2014),Yaron et al. (2012); Drake et al. (2009),Yar12;Drake09,ATel 7343,Bilgi et al. (2015),Bilgi (2015),12:27.9,+32:09:54.5,20150327,,0.04,Hangard et al.(2015),SN aka CSS150322:121228+320954; aka PS15xi
+SN2015G,NGC 6951,37:14.1,+66:06:20.3,0.00475,Haynes et al. (1998),Haynes98,Hay98,Ibn,Shima (2015),Shima et al.(2015),Shima15,ATel 7563; CBET 4087,Shima et al.(2015),Shima15,37:25.6,+66:07:11.68,20150410,0.004223,,,Not in archives of rochesterastronomy.org/snimages
+ASASSN-15ho,2MASXi J0909234-044327,09:23.4,-04:43:27.7,,,,,Ia,Falco (2015),Falco et al. (2015),Falco15,ATel 7426;ATel 7432,ASAS-SN Kiyota (2015),Kiyota et al.(2015),09:23.9,-04:43:30.10,20150422,,0.046,Falco et al. (2015),Not in archives of rochesterastronomy.org/snimages
+ASASSN-15hg,CGCG 063-098,53:49.2,+09:11:37.63,0.029771,2MRS Huchra et al. (2012),Huchra12,Huch15,Ia,Falco (2015),Falco et al. (2015),Falco15,ATel 7413;ATel 7420;ATel 7421,ASAS-SN Brimacombe (2015),Brimacombe et al.(2015),53:48.6,+09:11:37.8,20150420,0.03089,,,Not in archives of rochesterastronomy.org/snimages
+PS15aez,SDSS J110009.83+053348.5,00:09.8,+05:33:48.58,,,,,Ia,Piascik (2015),Piascik et al. (2015),Pia15,ATel 7440;ATel 7437,PSST Smith (2015),Smith (2015),00:09.8,+05:33:48.5,20150423,,0.056,Piascik et al.(2015),Not in archives of rochesterastronomy.org/snimages;host galaxy possibly known as 2MASX J11000988+0533494
+SN2011fe,,,,0.000804,,,,,,,,,,,,,,,,,
+SN2011hr,,,,0.01328,,,,,,,,,,,,,,,,,
+SN2011gy,,,,0.01688,,,,,,,,,,,,,,,,,
+SN2011hk,,,,0.01756,,,,,,,,,,,,,,,,,
+SN2011fs,,,,0.02091,,,,,,,,,,,,,,,,,
+SN2011gf,,,,0.02766,,,,,,,,,,,,,,,,,
+PTF11pbp,,,,0.028924,,,,,,,,,,,,,,,,,
+SN2011ho,,,,0.031829,,,,,,,,,,,,,,,,,
+SN2011io,,,,,,,,,,,,,,,,,,,,,
+SN2011iu,,,,0.04598,,,,,,,,,,,,,,,,,
+PTF11qmo,,,,0.05523,,,,,,,,,,,,,,,,,
+PTF11qri,,,,,,,,,,,,,,,,,,,,,
+PTF11qzq,,,,,,,,,,,,,,,,,,,,,
+PTF11moy,,,,,,,,,,,,,,,,,,,,,
+PTF11owc,,,,0.070331,,,,,,,,,,,,,,,,,
+PTF11mty,,,,0.077489,,,,,,,,,,,,,,,,,
+PTF11qpc,,,,0.089023,,,,,,,,,,,,,,,,,
+SN2011ha,,,,,,,,,,,,,,,,,,,,,
+SN2012bh,,,,0.025244,,,,,,,,,,,,,,,,,
+SN2011jh,,,,0.007789,,,,,,,,,,,,,,,,,
+SN2011iy,,,,0.004266,,,,,,,,,,,,,,,,,
+SN2012bo,,,,0.0254,,,,,,,,,,,,,,,,,
+SN2012bm,,,,0.024803,,,,,,,,,,,,,,,,,
+SN2012bp,,,,0.028291,,,,,,,,,,,,,,,,,
+SN2012em,,,,0.038073,,,,,,,,,,,,,,,,,
+SN2012et,,,,0.024961,,,,,,,,,,,,,,,,,
+PTF12ikt,,,,0.045185,,,,,,,,,,,,,,,,,
+SN2012fb,,,,0.0405,,,,,,,,,,,,,,,,,
+PTF12iiq,,,,0.029142,,,,,,,,,,,,,,,,,
+LSQ12fhs,,,,0.03315,,,,,,,,,,,,,,,,,
+CSS121006:232854+085452,,,,0.029964,,,,,,,,,,,,,,,,,
+CSS121009:011101-172841,,,,0.052416,,,,,,,,,,,,,,,,,
+LSQ12fmx,,,,0.067467,,,,,,,,,,,,,,,,,
+PS1-12bwh,,,,0.023203,,,,,,,,,,,,,,,,,
+PSNJ07250042+2347030,,,,0.018346,,,,,,,,,,,,,,,,,
+SN2012fm,,,,0.014553,,,,,,,,,,,,,,,,,
+#Comet168P,,,,,,,,,,,,,,,,,,,,,
+SN2012fr,,,,0.005457,,,,,,,,,,,,,,,,,
+SN2012fk,,,,0.035,,,,,,,,,,,,,,,,,
+LSQ12fuk,,,,,,,,,,,,,,,,,,,,,
+SN2012gm,,,,0.01479,,,,,,,,,,,,,,,,,
+LSQ12gef,,,,,,,,,,,,,,,,,,,,,
+CSS121114:090202+101800,,,,0.037148,,,,,,,,,,,,,,,,,
+SN2012go,,,,,,,,,,,,,,,,,,,,,
+SN2012cg,,,,0.001458,,,,,,,,,,,,,,,,,
+SN2013cs,,,,0.009243,,,,,,,,,,,,,,,,,
+SN2013da,,,,0.02431,,,,,,,,,,,,,,,,,
+SN2013bs,,,,0.027612,,,,,,,,,,,,,,,,,
+PTF13asv,,,,,,,,,,,,,,,,,,,,,
+SN2013bo,,,,,,,,,,,,,,,,,,,,,
+SN2013bt,,,,0.036446,,,,,,,,,,,,,,,,,
+SNhunt175,,,,0.040915,,,,,,,,,,,,,,,,,
+SN2013ck,,,,,,,,,,,,,,,,,,,,,
+CSS130218:092354+385837,,,,0.057361,,,,,,,,,,,,,,,,,
+PTF13ayw,,,,0.053843,,,,,,,,,,,,,,,,,
+SN2013cb,,,,0.054127,,,,,,,,,,,,,,,,,
+SN2013bq,,,,,,,,,,,,,,,,,,,,,
+SN2013ar,,,,0.05201,,,,,,,,,,,,,,,,,
+SN2013be,,,,0.065846,,,,,,,,,,,,,,,,,
+CSS130317:082848+293031,,,,0.078368,,,,,,,,,,,,,,,,,
+iPTF13ebh,,,,0.013269,,,,,,,,,,,,,,,,,
+iPTF13dge,,,,0.015854,,,,,,,,,,,,,,,,,
+SN2013fw,,,,0.016952,,,,,,,,,,,,,,,,,
+SN2013fn,,,,0.026975,,,,,,,,,,,,,,,,,
+SNhunt206,,,,0.027032,,,,,,,,,,,,,,,,,
+iPTFdkj,,,,0.036232,,,,,,,,,,,,,,,,,
+iPTFdkx,,,,,,,,,,,,,,,,,,,,,
+PS1-13dkh,,,,,,,,,,,,,,,,,,,,,
+SN2013fj,,,,0.03357,,,,,,,,,,,,,,,,,
+iPTF13dkl,,,,,,,,,,,,,,,,,,,,,
+LSQ13cmt,,,,0.056949,,,,,,,,,,,,,,,,,
+LSQ13crf,,,,,,,,,,,,,,,,,,,,,
+LSQ13cwp,,,,0.066553,,,,,,,,,,,,,,,,,
+PTF13ddg,,,,,,,,,,,,,,,,,,,,,
+iPTF13dad,,,,,,,,,,,,,,,,,,,,,
