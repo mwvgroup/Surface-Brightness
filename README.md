@@ -41,6 +41,6 @@ SN2014dk
 
 Some points that still need to be resolved:
 
-SN2014dk had two recorded redshift values 0.038; 0.02.
+SN2014dk had recorded redshift for the host galaxy but two values redorcec for the supernova: 0.038; 0.02.
 
 There were two supernova iPTFdkj, and iPTFdkx in the GALEX file that were not present in the redshift file. I took these as typos for iPTF13dkj, and iPTF13dkx, but have not verified this assumption yet.
