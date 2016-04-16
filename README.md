@@ -18,3 +18,6 @@ In the case where the input file has no value for counts per second, the script 
 
 4. 'File list.csv' contains a list of the .tar archives and .int files corresponding to each supernova. It will also be updated to include a list of which .int files in which the intended target was not observed. 
 
+5. The script treats the error in pixel area and flux conversion factor as being zero. To change these alter the values of the variable Pixel_area_err and flux_conv_err respectivley. 
+
+
