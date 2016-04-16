@@ -14,7 +14,7 @@ In the case where the input file has no value for counts per second, the script 
 
 2. When inheriting this project there were two supernova "iPTFdkj", and "iPTFdkx" in the the input file 'GALEX flux.csv' that were missing associated redshift info and .int files). I took these as typos for iPTF13dkj, and iPTF13dkx.
 
-3. The photon counts per second for each supernova were collected manually using ds9.If the exact pixel value of the source was 0 and the location of the supernova, the pixel with a value closest to the target was used. 
+3. The photon counts per second for each supernova were collected manually using ds9. If the exact pixel value of the source was 0 at the location of the supernova, the pixel with a value closest to the target was used. 
 
 4. 'File list.csv' contains a list of the .tar archives and .int files corresponding to each supernova. It will also be updated to include a list of which .int files in which the intended target was not observed. 
 
