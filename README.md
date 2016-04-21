@@ -1,4 +1,4 @@
-# UV Surface Brightness of 1kpc Radius Region around Supernova
+# Calculating UV Surface Brightness of 1kpc Radius Region around Supernova
 
 ####Code Summary:
 
