@@ -8,9 +8,11 @@ This repository contains two versions of a script for calculating the UV surface
   
 To calculate surface brightness from spreadsheet values, use the script located in 'Surface-Brightness/csv'. This script is an earlier version that requires an input .csv file containing the redshift, counts per second values, and exposure times for each supernova of interest. It is designed to use counts per second values for a single pixel, but can be modified to use photometric values instead. For more information, see 'Surface-Brightness/csv/README_csv.md'
   
-To calculate surface brightness from a .fits file, use the script located in 'Surface-Brightness/Photometry'. This is a newer version of the script that uses values from a .reg file to locate supernova within a .fits file.
+To calculate surface brightness from a .fits file, use the script located in 'Surface-Brightness/Photometry'. This is a newer version of the script that uses values from a .reg file to locate supernova within a .fits file. 
   
   
 ####Words of Caution /  Todo:
 
-The error propagation in the photometry script is not correct. I believe all other calculations to be fine.
+1. The error propagation in the photometry script is not correct. I believe all other calculations to be fine.
+
+2. A readme file for the photometry script is on its way
