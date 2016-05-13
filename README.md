@@ -15,4 +15,4 @@ To calculate surface brightness from a .fits file, use the script located in 'Su
 
 1. The error propagation in the photometry script is not correct. I believe all other calculations to be fine.
 
-2. A readme file for the photometry script is on its way
+2. A readme file for the photometry script is on its way, and will be written up formally once the photometry script is finished completly.
