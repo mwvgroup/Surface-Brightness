@@ -12,7 +12,15 @@ After performing photometry on all of the files, the corresponding flux, luminos
 
 Before using the code it is necessary to set the value of certain parameters. For convenience these are located at the beginning of the script and notated in the comments. After this initial change the rest of the script can be run and will perform as described above. these parameters include the following:
 
-*this list will be written soon
+*region_file: The file path of the .reg file containing a name, location, and redshift for each supernova of interest.
+
+*output_file: The file path were the generated table should be written to. This path should end with 'filename.csv'.
+
+*fits_directory: The directory containg the .fits files you want to calculate surface brightness from. The script will automatically search through all sub directories as well. To change this behavior alter the code following the comment "#We create a list of .fits files to perform photometry on"
+
+*file_key: A string which can be used to identify which files in fits_directory you want to calculate surface brightness on. Files without file_key in their name will not be analyzed.
+
+*flux_conv:
 
 ####Current Goals / Issues:
 
