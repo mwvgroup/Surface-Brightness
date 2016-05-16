@@ -10,5 +10,5 @@ Use the script located in 'Surface-Brightness/csv'. This script is an earlier ve
   
 #####To calculate surface brightness from a .fits file: 
 
-Use the script located in 'Surface-Brightness/Photometry'. This is a newer version of the script that is much more automated. When given a directory of .fits files, it uses the coordiantes from a .reg file to see if there are any observed supernova in each .fits file. If it locates a supernova it will perform photometry using the [photutils package] (http://photutils.readthedocs.io/en/latest/) and use the resulting value to calculate surface brightness. For more information see 'Surface-Brightness/csv/README_Photometry.md'
+Use the script located in 'Surface-Brightness/Photometry'. This is a newer version of the script that is much more automated. When given a directory of .fits files, it uses the coordiantes from a .reg file to see if there are any observed supernova in each .fits file. If it locates a supernova it will perform photometry using the [photutils package] (http://photutils.readthedocs.io/en/latest/) and use the resulting value to calculate surface brightness. For more information see [Surface-Brightness/csv/README_Photometry.md] (https://github.com/mwvgroup/Surface-Brightness/blob/master/Photometry/README_Photometry.md)
 
