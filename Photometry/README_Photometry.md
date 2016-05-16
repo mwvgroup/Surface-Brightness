@@ -16,10 +16,10 @@ Before using the code it is necessary to set the value of certain parameters. Fo
 
 ####Current Goals / Issues:
 
-1. The running of photometry and calculation of values uses multiple loops. I would like to simplify the script so that less loops are used and running is hopefully decreased.
+1. I would like to simplify the script so that less loops are used.
 
 2. I can see no better alternative to determining whether or not apertures yielding the value zero lie within the field of view than having the user give the final say. While this is potentially annoying to the user, it yields the highest accuracy.
 
-2. The error propagation used in the script is incorrect. The first sign of this is that photutils sometimes generates an error that is larger that the reported photometry value
+2. The error propagation used in the script is incorrect. The first sign of this is that photutils sometimes generates an error that is larger that the reported photometry value.
 
 3. For certain table columns in the output file, the header is missing appropriate units
