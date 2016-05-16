@@ -6,7 +6,7 @@ The goal of this project is to calculate the surface brightness of a supernova's
   
 #####To calculate surface brightness from spreadsheet values: 
 
-Use the script located in 'Surface-Brightness/csv'. This script is an earlier version of the project. It requires an input .csv file containing the redshift, average photon counts per second, and exposure times for each supernova of interest. The script is designed to use the counts per second value of a single pixel that has been manually pulled from a .fits file. With some work, however, it can be modified to use photometric values instead. For more information see 'Surface-Brightness/csv/README_csv.md'
+Use the script located in 'Surface-Brightness/csv'. This script is an earlier version of the project. It requires an input .csv file containing the redshift, average photon counts per second, and exposure times for each supernova of interest. The script is designed to use the counts per second value of a single pixel that has been manually pulled from a .fits file. With some work, however, it can be modified to use photometric values instead. For more information see [Surface-Brightness/csv/README_csv.md] (https://github.com/mwvgroup/Surface-Brightness/blob/master/csv/README_csv.md)
   
 #####To calculate surface brightness from a .fits file: 
 
