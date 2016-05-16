@@ -18,9 +18,9 @@ Before using the code it is necessary to set the value of certain parameters. Fo
 
 *fits_directory: The directory containg the .fits files you want to calculate surface brightness from. The script will automatically search through all sub directories as well. To change this behavior alter the code following the comment "#We create a list of .fits files to perform photometry on"
 
-*file_key: A string which can be used to identify which files in fits_directory you want to calculate surface brightness on. Files without file_key in their name will not be analyzed.
+*file_key: A string which can be used to identify which files in fits_directory you want to calculate surface brightness on. Files without file_key in their name will not be analyzed. To include all files set this equal to ''.
 
-*flux_conv:
+*flux_conv: A conversion factor from pixel count to flux. This value is given [here] (http://asd.gsfc.nasa.gov/archive/galex/FAQ/counts_background.html).
 
 ####Current Goals / Issues:
 
