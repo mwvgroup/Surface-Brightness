@@ -1,6 +1,6 @@
 # Calculating UV Surface Brightness of 1kpc Radius Region around Supernova
 
-###Project Summary:
+####Project Summary:
 
 The goal of this project is to calculate the surface brightness of a supernova's local enviornment in the UV. This repository contains two versions of a python3 script used for calculating the surface brightness of a 1kpc radius region. Each version is contained in its own folder with its own, more detailed readme file. The csv folder contains an earlier version of the script that calculates results based on values from a .csv file, while the script in the Photometry folder uses a .reg file to perform photometry on a directory of .fits files. 
   
