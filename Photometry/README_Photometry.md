@@ -14,8 +14,6 @@ Before using the code it is necessary to set the value of certain parameters. Fo
 
 *this list will be written soon
 
-
-
 ####Current Goals / Issues:
 
 1. The running of photometry and calculation of values uses multiple loops. I would like to simplify the script so that less loops are used and running is hopefully decreased.
