@@ -31,3 +31,5 @@ Before using the code it is necessary to set the value of certain parameters. Fo
 2. The error propagation used in the script is incorrect. The first sign of this is that photutils sometimes generates an error that is larger that the reported photometry value.
 
 3. For certain table columns in the output file, the header is missing appropriate units
+
+4. Double check the trim settings
