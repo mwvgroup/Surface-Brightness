@@ -7,11 +7,11 @@ The script 'Surface Brightness.ipynb' uses input values from the file 'GALEX flu
 In the case where the input file has no value for counts per second, the script will treat it as 'nan' and report it as such in the output file. A more specific outline of how the code works is contained in comments within the .ipynd file itself.
 
 ####File Descriptions:
-1. 'File list.csv' contains a list of the .tar archives and .int files corresponding to each supernova.
+1. 'File list.csv' contains a list of the .tar archives corresponding to each supernova.
 
-2. 'GALEX flux all.csv' contains a list of redshift, cps values, and exposure times for multiple supernova from multiple .int files.
+2. 'GALEX flux all.csv' contains a list of redshift, cps values, and exposure times for multiple supernova from multiple .fits files.
   
-3. 'GALEX flux single.csv' contains a list of redshift, cps values, and exposure times for multiple supernova from a single .int files. This single value is chosen from the 'GALEX flux all.csv' file by selecting values with the longest exposure times.
+3. 'GALEX flux single.csv' contains a list of redshift, cps values, and exposure times for multiple supernova from a single .fits files. This single value is chosen from the 'GALEX flux all.csv' file by selecting values with the longest exposure times.
   
 4. 'Surface Brightness.ipynb' is the script described above.
   
@@ -23,7 +23,7 @@ In the case where the input file has no value for counts per second, the script 
 
   ASASSN-15fj, ASASSN-15ho, CSS140425:161024+470440, CSS140501:170414+174839, CSS141123:091002+521856, iPTF13dad, iPTF13dkl, iPTFdkx, iPTF14gdr, iPTF15xi, LSQ12fuk, LSQ12gef, LSQ13crf, LSQ14age, LSQ14ahm, LSQ14fmg, LSQ14gde, LSQ15aae, PS1-13dkh, PS15aez, PS15mt, PS15sv, PTF11moy, PTF11qri, PTF11qzq, PTF13asv, PTF13ddg, SN2011ha, SN2011io, SN2012go, SN2013bo, SN2013bq, SN2013ck, SN2014dk
 
-2. When inheriting this project there were two supernova "iPTFdkj", and "iPTFdkx" in the the input file 'GALEX flux.csv' that were missing associated redshift info and .int files. I took these as typos for iPTF13dkj, and iPTF13dkx.
+2. When inheriting this project there were two supernova "iPTFdkj", and "iPTFdkx" in the the input file 'GALEX flux.csv' that were missing associated redshift info and .fits files. I took these as typos for iPTF13dkj, and iPTF13dkx.
 
 3. The photon counts per second for each supernova were collected manually using ds9. If the exact pixel value of the source was 0 at the location of the supernova, the pixel with a value closest to the target was used. 
 
