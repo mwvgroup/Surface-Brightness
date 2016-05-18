@@ -16,7 +16,7 @@ Before using the code it is necessary to set the value of certain parameters. Fo
 
 * output_file: The file path were the generated table should be written to. This path should end with 'filename.csv'.
 
-* fits_directory: The directory containg the .fits files you want to calculate surface brightness from. The script will automatically search through all sub directories as well. To change this behavior alter the code following the comment "#We create a list of .fits files to perform photometry on"
+* fits_directory: The directory contain the .fits files you want to calculate surface brightness from. The script will automatically search through all sub directories as well. To change this behavior alter the code following the comment "#We create a list of .fits files to perform photometry on"
 
 * file_key: A string which can be used to identify which files in fits_directory you want to calculate surface brightness on. Files without file_key in their name will not be analyzed. To include all files set this equal to ''.
 
@@ -24,11 +24,11 @@ Before using the code it is necessary to set the value of certain parameters. Fo
 
 ####Current Goals / Issues:
 
-1. I would like to simplify the script so that less loops are used.
+2. The error propagation used in the script is incorrect. The first sign of this is that photutils sometimes generates an error that is larger that the reported photometry value.
 
 2. I can see no better alternative to determining whether or not apertures yielding the value zero lie within the field of view than having the user give the final say. While this is potentially annoying to the user, it yields the highest accuracy.
 
-2. The error propagation used in the script is incorrect. The first sign of this is that photutils sometimes generates an error that is larger that the reported photometry value.
+2. After resolving the above issues I want to go through the script and simplify some of the functionality, making the script more streamlined and "pythonic".
 
 3. For certain table columns in the output file, the header is missing appropriate units
 
