@@ -24,10 +24,8 @@ Before using the code it is necessary to set the value of certain parameters. Fo
 
 ####Current Goals / Issues:
 
-2. I can see no better alternative to determining whether or not apertures yielding the value zero lie within the field of view than having the user give the final say. While this is potentially annoying to the user, it yields the highest accuracy.
+2. I want to modify the script so it determines whether or not apertures lie within the field of view using mask files from galex. 
 
 2. After resolving the above issues I want to go through the script and simplify some of the functionality, making the script more streamlined and "pythonic".
 
 3. For certain table columns in the output file, the header is missing appropriate units
-
-4. Double check the trim settings
