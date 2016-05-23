@@ -26,6 +26,6 @@ Before using the code it is necessary to set the value of certain parameters. Fo
 
 2. I want to modify the script so it determines whether or not apertures lie within the field of view using mask files from galex. 
 
-2. After resolving the above issues I want to go through the script and simplify some of the functionality, making the script more streamlined and "pythonic".
+2. I want to go through the script and simplify some of the functionality, making the script more "pythonic".
 
 3. For certain table columns in the output file, the header is missing appropriate units
