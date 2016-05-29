@@ -2,7 +2,9 @@
 
 ####Code Summary and Use:
 
-The script [Surface Brightness (csv).ipynb] (https://github.com/mwvgroup/Surface-Brightness/blob/master/csv/Surface%20Brightness%20(csv).ipynb) uses input values from the file 'GALEX flux single.csv' to determine the surface brightness of a supernova's local environment. The input file contains a list of super nova, the redshift of their environment,  their observed average photon counts per second, and the corresponding exposure time. The script references information from the input file by column number (indexed at zero). Because of this it is necessary to properly specify what column number corresponds to what value before using the script. For example, column 1 may correspond to redshift values while column 2 may contain average photon counts per second. These parameters should be changed manually and are pointed out in comments toward the beginning of the script following the line '#Definition of file paths and relevant parameters:'. This step is particularly important because the input file has values for near and far UV observations, and the script can only be run for one set of values at a time.
+The script [Surface Brightness (csv).ipynb] (https://github.com/mwvgroup/Surface-Brightness/blob/master/csv/Surface%20Brightness%20(csv).ipynb) uses input values from the file 'GALEX flux single.csv' to determine the surface brightness of a supernova's local environment. The input file contains a list of super nova, the redshift of their environment, their observed average photon counts per second, and the corresponding exposure time. 
+
+Take note that the script references information from the input file by column number (indexed at zero). Because of this it is necessary to properly specify what column number corresponds to what value before using the script. For example, column 1 may correspond to redshift values while column 2 may contain average photon counts per second. These parameters should be changed manually and are pointed out in comments toward the beginning of the script following the line '#Definition of file paths and relevant parameters:'. This step is particularly important because the input file has values for both near and far UV observations, and the script can only be run for one set of values at a time.
 
 In the case where the input file has no value for counts per second, the script will treat it as 'nan' and report it as such in the output file. A more specific outline of how the code works is commented within the .ipynd file.
 
@@ -19,7 +21,7 @@ In the case where the input file has no value for counts per second, the script 
   
 ####Notes:
 
-1. For some cases there was no available redshift value for a supernova’s host environment. In these cases redshift values of the supernova itself were used. These cases include:
+1. For some supernova in 'GALEX flux single.csv' there was no available redshift value for a supernova’s host environment. In these cases redshift values of the supernova itself were used. These cases include:
 
   ASASSN-15fj, ASASSN-15ho, CSS140425:161024+470440, CSS140501:170414+174839, CSS141123:091002+521856, iPTF13dad, iPTF13dkl, iPTFdkx, iPTF14gdr, iPTF15xi, LSQ12fuk, LSQ12gef, LSQ13crf, LSQ14age, LSQ14ahm, LSQ14fmg, LSQ14gde, LSQ15aae, PS1-13dkh, PS15aez, PS15mt, PS15sv, PTF11moy, PTF11qri, PTF11qzq, PTF13asv, PTF13ddg, SN2011ha, SN2011io, SN2012go, SN2013bo, SN2013bq, SN2013ck, SN2014dk
 
