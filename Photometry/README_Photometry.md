@@ -35,8 +35,3 @@ Before using the code it is necessary to set the value of certain parameters. Fo
 
 * flux_conv: A conversion factor from pixel count to flux. This value is given [here] (http://asd.gsfc.nasa.gov/archive/galex/FAQ/counts_background.html).
 
-####Current Goals / Issues:
-
-3. For certain table columns in the output file, the header is missing appropriate units
-
-4. I need to finish downloading all of the check files so photometry can be run. This will allow me to update output.csv
