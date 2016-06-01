@@ -1,0 +1,21 @@
+./Tar archives (uncomp.)/CSS130218:092354+385837/2/AIS_85/AIS_85_sg59-fd-int.fits
+ No check file 
+
+./Tar archives (uncomp.)/CSS130218:092354+385837/3/AIS_85/AIS_85_sg58-fd-int.fits
+ No check file 
+
+./Tar archives (uncomp.)/CSS130317:082848+293031/1/AIS_215/AIS_215_sg74-fd-int.fits
+ No check file 
+
+./Tar archives (uncomp.)/CSS130317:082848+293031/2/AIS_215/AIS_215_sg72-fd-int.fits
+ No check file 
+
+./Tar archives (uncomp.)/iPTF13dad/1/AIS_58/AIS_58_sg63-fd-int.fits
+ No check file 
+
+./Tar archives (uncomp.)/PS15mt/2/AIS_192/AIS_192_sg09-fd-int.fits
+ No check file 
+
+./Tar archives (uncomp.)/SNhunt263/2/AIS_85/AIS_85_sg20-fd-int.fits
+ No check file 
+
