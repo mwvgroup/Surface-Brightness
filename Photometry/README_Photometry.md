@@ -23,7 +23,7 @@ Using the photometry results, the corresponding flux, luminosity, and surface br
 
 ####Code Use:
 
-Before using the code, it is necessary to set the value of certain parameters. For convenience these are located at the beginning of the script and notated in the comments. These parameters include the following:
+Before running the code, it is necessary to set the value of certain parameters. For convenience these are located at the beginning of the script and notated in the comments. These parameters include the following:
 
 * region_file: The file path of a .reg file containing the names, locations, and redshifts for each supernova of interest.
 
