@@ -1,19 +1,19 @@
-# Calculating UV Surface Brightness of 1 kpc Radius Region from a .fits File
+# Calculating UV Surface Brightness of 1kpc Radius Region around Supernova
 
-####Code Summary:
+####Project Summary:
 
-The script [Surface Brightness (Photometry).ipynb] (https://github.com/mwvgroup/Surface-Brightness/blob/master/Photometry/Surface%20Brightness%20(Photometry).ipynb) begins by walking through a directory and building a list of .fits files containing a user specified keyword. An example of such keywords are 'nd-int' or 'fd-int', which distinguish between observations in the near or far UV respectively. For an outline of possible keywords, GALEX mantains a list of file naming conventions [here](http://galex.stsci.edu/gr6/?page=ddfaq). After compiling this list, the script uses a .reg file to build a dictionary of redshifts and coordinates for each supernova of interest. It uses these coordinates to check each of the .fits files for an observed supernova and performs photometry using the [photutils package] (http://photutils.readthedocs.io/en/latest/) with a 1 kpc radius aperture. 
+The goal of this project is to calculate the UV surface brightness of a supernova's local environment using data from GALEX. The script [Surface Brightness (Photometry).ipynb] (https://github.com/mwvgroup/Surface-Brightness/blob/master/Photometry/Surface%20Brightness%20(Photometry).ipynb) begins by walking through a directory and building a list of .fits files containing a user specified keyword. An example of such keywords are 'nd-int' or 'fd-int', which distinguish between observations in the near or far UV respectively. For an outline of possible keywords, GALEX maintains a list of file naming conventions [here](http://galex.stsci.edu/gr6/?page=ddfaq). After compiling this list, the script uses a .reg file to build a dictionary of redshifts and coordinates for each supernova of interest. It uses these coordinates to check each of the .fits files for an observed supernova and performs photometry using the [photutils package] (http://photutils.readthedocs.io/en/latest/) with a 1 kpc radius aperture. 
 
-The primary .fits files used in this project are int type files, outlined in the GALEX link above. These files contain a circular collection of pixels corresponding to the observing telescope's field of view. All pixels outside the field of view are automatically assigned the value 0 ([here is an example image] (https://github.com/mwvgroup/Surface-Brightness/blob/master/Photometry/ds9.jpg)). This means if the photometry process returns 0, there is no immediate way of knowing if the corresponding supernova (and by extension the photometry aperture) is within the field of view. In such a case the script will perform photometry on a secondary check file. By default the check file used is a wt type .fits file that is masked so zero valued pixels only occure outside the field of view.
+The primary .fits files used in this project are int type files, outlined in the GALEX link above. These files contain a circular collection of pixels corresponding to the observing telescope's field of view. All pixels outside the field of view are automatically assigned the value 0 ([here is an example image] (https://github.com/mwvgroup/Surface-Brightness/blob/master/Photometry/ds9.jpg)). This means if the photometry process returns 0, there is no immediate way of knowing if the corresponding supernova (and by extension the photometry aperture) is within the field of view. In such a case the script will perform photometry on a secondary check file. By default, the check file used is a wt type .fits file that is masked so zero valued pixels only occur outside the field of view.
 
-After performing photometry on a .fits file, the corresponding flux, luminosity, and surface brightness values are calculated and written to an .csv file. For each supernova region, only the value with the smallest error is written to this file. The script will also create a .csv file listing int type files that are either missing wt type check files, or do not have a supernova in their field of view. A step by step outline of how the code works is commented within the .ipynd file. Instructions on how to get the script running are listed below.
+Using the photometry results, the corresponding flux, luminosity, and surface brightness values are calculated and written to an .csv file. For each supernova region, only the value with the smallest error is written to this file. The script will also create a .csv file listing int type files that are either missing wt type check files, or do not have a supernova in their field of view. A step by step outline of how the code works is commented within the .ipynd file. Instructions on how to get the script running are listed below.
 
 
 ####File List:
 
-* observed_target_info.reg: A region file containing a collection of supernova observed by GALEX along with their redshift, and their location.
+* observed_target_info.reg: A region file containing a collection of supernova along with their redshift, and their location.
 
-* output NUV/FUV.csv: A .csv file containing output information generated by the script. The .fits files used to generated this file are not included in the repository.
+* output NUV/FUV.csv: A .csv file containing numerical results generated by the script. The .fits files used to generate this file are not included in the repository.
 
 * output NUV/FUV.pdf: A plot of the values from Output NUV/FUV.csv showing surface brightness verses the redshift.
 
@@ -23,16 +23,17 @@ After performing photometry on a .fits file, the corresponding flux, luminosity,
 
 ####Code Use:
 
-Before using the code it is necessary to set the value of certain parameters. For convenience these are located at the beginning of the script and notated in the comments. These parameters include the following:
+Before using the code, it is necessary to set the value of certain parameters. For convenience these are located at the beginning of the script and notated in the comments. These parameters include the following:
 
 * region_file: The file path of a .reg file containing the names, locations, and redshifts for each supernova of interest.
 
-* output_file: The file path were the generated table should be written to. This path should end with the extension '.csv'.
+* output_file: The file path where the generated table should be written to. This path should end with the extension '.csv'.
 
-* fits_directory: The directory contain the .fits files you want to calculate surface brightness from. The script will automatically search through all sub directories as well. To change this behavior alter the code following the comment "#We create a list of .fits files to perform photometry on"
+* fits_directory: The directory containing the .fits files you want to calculate surface brightness from. The script will automatically search through all sub directories as well. To change this behavior, alter the code following the comment "#We create a list of .fits files to perform photometry on"
 
-* file_key: A string which can be used to identify which files in fits_directory you want to perfomr photometry on. Files without file_key in their name will not be analyzed. Setting this equal to '' will include all files, but will produce an error should the script try to referance a check file.
+* file_key: A string which can be used to identify which files in fits_directory you want to perform photometry on. Files without file key in their name will not be analyzed. Setting this equal to '' will include all files, but will produce an error should the script try to reference a check file.
 
 * check_file_key: When the script needs to perform photometry on a check file, it will use the file path of the primary .fits file, but replace file_key with the string check_file_key
 
 * flux_conv: A conversion factor from pixel count to flux. This value is given [here] (http://asd.gsfc.nasa.gov/archive/galex/FAQ/counts_background.html).
+
