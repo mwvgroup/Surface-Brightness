@@ -35,6 +35,6 @@ Before running the code, it is necessary to set the value of certain parameters.
 
 * flux_conv: A conversion factor from pixel count to flux. This value is given [here] and is different for far and near UV. (http://asd.gsfc.nasa.gov/archive/galex/FAQ/counts_background.html).
 
-*Next to the comment '#Plot Title' change the title of the output plot to describe data in either the NUV or FUV. 
+* Next to the comment '#Plot Title' change the title of the output plot to describe data in either the NUV or FUV. 
 
 
