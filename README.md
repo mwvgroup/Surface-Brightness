@@ -21,7 +21,7 @@ Using the photometry results, the corresponding flux, luminosity, and surface br
 
 ####Code Use:
 
-Before running the code, it is necessary to set the value of certain parameters. For convenience these are located at the beginning of the script and notated in the comments. These parameters include the following:
+Before running the code, it is necessary to set the value of certain parameters. For convenience most of these are located at the beginning of the script and notated in the comments. These parameters include the following:
 
 * region_file: The file path of a .reg file containing the names, locations, and redshifts for each supernova of interest.
 
@@ -33,5 +33,8 @@ Before running the code, it is necessary to set the value of certain parameters.
 
 * check_file_key: When the script needs to perform photometry on a check file, it will use the file path of the primary .fits file, but replace file_key with the string check_file_key
 
-* flux_conv: A conversion factor from pixel count to flux. This value is given [here] (http://asd.gsfc.nasa.gov/archive/galex/FAQ/counts_background.html).
+* flux_conv: A conversion factor from pixel count to flux. This value is given [here] and is different for far and near UV. (http://asd.gsfc.nasa.gov/archive/galex/FAQ/counts_background.html).
+
+*Next to the comment '#Plot Title' change the title of the output plot to describe data in either the NUV or FUV. 
+
 
