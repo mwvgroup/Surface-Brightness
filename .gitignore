@@ -1,0 +1,9 @@
+
+*.fits
+
+Tar archives (uncomp.)/*
+
+.ipynb_checkpoints/*
+
+csv/*
+
