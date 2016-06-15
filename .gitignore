@@ -1,9 +1,8 @@
 
 *.fits
 
-Tar archives (uncomp.)/*
+fits files/*
 
 .ipynb_checkpoints/*
 
 csv/*
-
