@@ -4,7 +4,7 @@
 
  The near and far UV Surface Brightness is calculated for 1kpc radius regions around supernova using data from [Galex] (http://galex.stsci.edu/GR6/). These values are found using the Python3 code [Surface Brightness.ipynb] (https://github.com/mwvgroup/Surface-Brightness/blob/master/Surface%20Brightness.ipynb). To use the code, first set the value of parameters located after the comment `#User set parameters`. These parameters include:
 
-* region_file: The file path of a .reg file containing the names, locations, and redshifts for each supernova of interest.
+* `region_file` The file path of a .reg file containing the names, locations, and redshifts for each supernova of interest.
 
 * output_file: The directory where any generated output files should be written to.
 
