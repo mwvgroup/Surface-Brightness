@@ -2,17 +2,19 @@
 
 ####Code Overview / use:
 
-[Surface Brightness (Photometry).ipynb] (https://github.com/mwvgroup/Surface-Brightness/blob/master/Surface%20Brightness.ipynb) calculates the UV surface brightness of supernova environments using data from GALEX. The code begins by walking through a directory and building a list of .fits files containing a user specified keyword. After compiling this list, the script uses a .reg file to build a dictionary of redshifts and coordinates for each supernova of interest. It uses these coordinates to check each of the .fits files for an observed supernova and performs photometry using the [photutils package] (http://photutils.readthedocs.io/en/latest/) with a 1 kpc radius aperture. The code uses the keywords 'nd-int' or 'fd-int' by default, corresponding to int type files observed in the near and far UV respectively. For an outline of different file types, GALEX maintains a list of file naming conventions [here](http://galex.stsci.edu/gr6/?page=ddfaq).Before running the code, set the value of the following parameters located after the comment `#User set parameters`:
+[Surface Brightness (Photometry).ipynb] (https://github.com/mwvgroup/Surface-Brightness/blob/master/Surface%20Brightness.ipynb) calculates the UV surface brightness of supernova environments using data from GALEX. The code begins by walking through a directory and building a list of .fits files containing a user specified keyword. After compiling this list, the script uses a .reg file to build a dictionary of redshifts and coordinates for each supernova of interest. It uses these coordinates to check each of the .fits files for an observed supernova and performs photometry using the photutils package with a 1 kpc radius aperture. The code uses the keywords 'nd-int' or 'fd-int' by default, corresponding to int type files observed in the near and far UV respectively. For an outline of different file types, GALEX maintains a list of file naming conventions here.Before running the code, set the value of the following parameters located after the comment #User set parameters:
+
+Before running the code, set the value of the following parameters located after the comment `#User set parameters`:
 
 * region_file: The file path of a .reg file containing the names, locations, and redshifts for each supernova of interest.
 
-* output_file: The file path where the generated table should be written to. This path should not end with any extension.
+* output_file: The directory where the any generated output files should be written to.
 
-* fits_directory: The directory containing the .fits files you want to calculate surface brightness from. The script will automatically search through all sub directories as well. To change this behavior, alter the code following the comment "#We create a list of .fits files to perform photometry on"
+* fits_directory: A directory containing the .fits files you want to calculate surface brightness from. The script will automatically search through all sub directories as well. To change this behavior, alter the code following the comment `#We create a list of .fits files to perform photometry on`
 
-* uv_type: Set this object equal to 'nuv' or 'fuv' so that the code can set the remainder of the necessary parameters automatically.
+* uv_type: Set this object equal to 'nuv' or 'fuv' to signify observations in the near or far UV. This allows the code to set the remainder of the necessary parameters automatically.
 	
-The following parameters are automatically set depending on the value of uv_type:
+Setting these parameters should be the only input necessary from the user. The following parameters are automatically set depending on the value of uv_type:
 
 * file_key: A string which can be used to identify which files in fits_directory you want to perform photometry on. Files without file key in their name will not be analyzed.
 
