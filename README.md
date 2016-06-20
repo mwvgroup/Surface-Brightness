@@ -4,15 +4,17 @@
 
  The near and far UV Surface Brightness is calculated for 1kpc radius regions around supernova using data from [Galex] (http://galex.stsci.edu/GR6/). These values are found using the Python3 code [Surface Brightness.ipynb] (https://github.com/mwvgroup/Surface-Brightness/blob/master/Surface%20Brightness.ipynb). To use the code, first set the value of parameters located after the comment `#User set parameters`. These parameters include:
 
-* `region_file` The file path of a .reg file containing the names, locations, and redshifts for each supernova of interest.
+* `region_file` : The file path of a .reg file containing the names, locations, and redshifts for each supernova of interest.
 
-* output_file: The directory where any generated output files should be written to.
+* `output_file` : The directory where any generated output files should be written to.
 
-* fits_directory: A directory containing the .fits files you want to calculate surface brightness from. The script will automatically search through all sub directories. To change this behavior, alter the code following the comment `#We create a list of .fits files to perform photometry on`
+* `fits_directory` : A directory containing the .fits files used to calculate surface brightness. The script will automatically search through all sub directories. To change this behavior, alter the code following the comment `#We create a list of .fits files to perform photometry on`
 
-* uv_type: Set this object equal to 'nuv' or 'fuv' to signify observations in the near or far UV. This allows the code to set the remainder of the necessary parameters automatically.
+* `uv_type` : Set this object equal to 'nuv' or 'fuv' to signify observations in the near or far UV. This allows the code to set the remainder of the necessary parameters automatically.
 	
-The code begins by walking through the directory specified by the parameters above and building a list of .fits files to be analyzed. The code looks for the keywords 'nd-int' or 'fd-int' depending on if `uv_type` is set equal to nuv or fuv. These keywords correspond to int type files observed in the near and far UV respectively. For an outline of different file types, GALEX maintains a list of file naming conventions [here] (http://galex.stsci.edu/gr6/?page=ddfaq). 
+The code begins by walking through the directory specified by the parameters above and building a list of .fits files to be analyzed. Files will only be added to the list if the filename contains either 'nd-int' or 'fd-int' depending on if `uv_type` is set equal to nuv or fuv respectivly. These keywords distinguish int type files containing observations in the near and far UV. For an outline of different file types and naming conventions, GALEX maintains a list [here] (http://galex.stsci.edu/gr6/?page=ddfaq). 
+
+
 
 The int type .fits files used in this project contain a circular collection of pixels corresponding to the observing telescope's field of view ([here is an example image] (https://github.com/mwvgroup/Surface-Brightness/blob/master/ds9.jpg)). All pixels outside this field of view are assigned a value of 0. If the photometry process returns 0, there is no immediate way of knowing if the corresponding supernova (and by extension the photometry aperture) is within the field of view. For such cases the script will perform photometry on a secondary check file. By default, the check file used is a wt type .fits where zero valued pixels only occur outside the field of view. If the performing photometry on the check file yields a non-zero value, then the aperture is deamed to be within the telescope's field of view.
 
