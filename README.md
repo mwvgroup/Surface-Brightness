@@ -31,10 +31,10 @@ This conversion factor is given on the [Galex website] (http://asd.gsfc.nasa.gov
     cmd = cosmo.comoving_distance(redshift).cgs.value 
     lum = flux * 4 * np.pi * (cmd**2) 
     
-To find surface brightness we then convert from units of kpc^2 to armin^2
+To find surface brightness we then convert from units of kpc^2 to armin^2 and then from arcmin^2 to arcsec^2
 
-    arcmin = (1 / cosmo.kpc_comoving_per_arcmin(redshift).value)**2
-    sbrightness = (lum / pixel_area) * arcmin
+    arcmin = cosmo.kpc_comoving_per_arcmin(redshift).value**2 
+    sbrightness = lum * arcmin / 3600
 	
 #### Repository File List:
 
