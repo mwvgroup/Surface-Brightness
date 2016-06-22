@@ -22,7 +22,6 @@ Failed Check File,./fits files/Friedman Supernova/6371056506934132736/AIS_4_sg13
 Failed Check File,./fits files/Friedman Supernova/6371091714928541696/AIS_5_sg35-nd-int.fits
 Failed Check File,./fits files/Friedman Supernova/6371091719223508992/AIS_5_sg39-nd-int.fits
 Failed Check File,./fits files/Friedman Supernova/6371267630346534912/AIS_10_sg29-nd-int.fits
-Failed Check File,./fits files/Friedman Supernova/6371302826529783808/AIS_11_sg40-nd-int.fits
 Failed Check File,./fits files/Friedman Supernova/6371689911531077632/AIS_22_sg93-nd-int.fits
 No Supernova Found,./fits files/Friedman Supernova/6372358370577350656/AIS_41_sg52-nd-int.fits
 Failed Check File,./fits files/Friedman Supernova/6372674995566411776/AIS_50_sg20-nd-int.fits
@@ -57,6 +56,7 @@ Failed Check File,./fits files/Friedman Supernova/6377284193407205376/AIS_181_sg
 Failed Check File,./fits files/Friedman Supernova/6377389716458700800/AIS_184_sg34-nd-int.fits
 Failed Check File,./fits files/Friedman Supernova/6377530510855372800/AIS_188_sg87-nd-int.fits
 No Supernova Found,./fits files/Friedman Supernova/6378480478164353024/AIS_215_sg77-nd-int.fits
+Failed Check File,./fits files/Friedman Supernova/6378656383918669824/AIS_220_sg62-nd-int.fits
 No Supernova Found,./fits files/Friedman Supernova/6378656384992411648/AIS_220_sg63-nd-int.fits
 No Supernova Found,./fits files/Friedman Supernova/6378691547889664000/AIS_221_sg43-nd-int.fits
 Failed Check File,./fits files/Friedman Supernova/6378691552184631296/AIS_221_sg47-nd-int.fits
@@ -84,6 +84,8 @@ Failed Check File,./fits files/Friedman Supernova/6383476611756326912/AIS_357_sg
 No Supernova Found,./fits files/Friedman Supernova/6396450813530603520/MISMWS_20402_0261-nd-int.fits
 No Supernova Found,./fits files/Friedman Supernova/6399722960134864896/MISMWS_17263_0179-nd-int.fits
 Failed Check File,./fits files/Other Supernova/ASASSN-14ay/2/AIS_10/AIS_10_sg66-nd-int.fits
+Failed Check File,./fits files/Other Supernova/ASASSN-14iu/1/AIS_80/AIS_80_sg28-nd-int.fits
+No Check File,./fits files/Other Supernova/CSS130317:082848+293031/1/AIS_215/AIS_215_sg74-nd-int.fits
 No Check File,./fits files/Other Supernova/CSS130317:082848+293031/2/AIS_215/AIS_215_sg72-nd-int.fits
 Failed Check File,./fits files/Other Supernova/iPTF13dkj/2/AIS_147/AIS_147_sg98-nd-int.fits
 Failed Check File,./fits files/Other Supernova/iPTF13dkl/2/AIS_149/AIS_149_sg69-nd-int.fits
@@ -100,6 +102,7 @@ Failed Check File,./fits files/Other Supernova/PSN J03034759+0024146/2/AIS_180/A
 Failed Check File,./fits files/Other Supernova/PSN J07250042+2347030/2/AIS_198/AIS_198_sg02-nd-int.fits
 Failed Check File,./fits files/Other Supernova/PSN J10292799+2200468/2/GI1_047040_UGC05672/GI1_047040_UGC05672-nd-int.fits
 Failed Check File,./fits files/Other Supernova/PSN J10292799+2200468/3/AIS_333/AIS_333_sg45-nd-int.fits
+No Check File,./fits files/Other Supernova/PTF11owc/1/AIS_80/AIS_80_sg27-nd-int.fits
 Failed Check File,./fits files/Other Supernova/PTF11owc/4/AIS_80/AIS_80_sg37-nd-int.fits
 No Check File,./fits files/Other Supernova/PTF11qmo/2/NGA_NGC3115/NGA_NGC3115-nd-int.fits
 No Supernova Found,./fits files/Other Supernova/PTF11qpc/1/AIS_227/AIS_227_sg93-nd-int.fits
@@ -124,7 +127,6 @@ Failed Check File,./fits files/Other Supernova/SN2013ar/2/AIS_80/AIS_80_sg52-nd-
 No Supernova Found,./fits files/Other Supernova/SN2013be/1/AIS_223/AIS_223_sg82-nd-int.fits
 Failed Check File,./fits files/Other Supernova/SN2013bo/2/AIS_108/AIS_108_sg32-nd-int.fits
 Failed Check File,./fits files/Other Supernova/SN2013bq/2/AIS_108/AIS_108_sg16-nd-int.fits
-Failed Check File,./fits files/Other Supernova/SN2013bs/2/AIS_11/AIS_11_sg40-nd-int.fits
 No Supernova Found,./fits files/Other Supernova/SN2013bt/2/AIS_98/AIS_98_sg54-nd-int.fits
 No Supernova Found,./fits files/Other Supernova/SN2013bt/3/AIS_98/AIS_98_sg79-nd-int.fits
 No Supernova Found,./fits files/Other Supernova/SN2013bt/4/MISGCSN_02376_0606/MISGCSN_02376_0606-nd-int.fits
