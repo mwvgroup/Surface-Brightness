@@ -6,7 +6,7 @@
 
 * `region_file` : The file path of a .reg file containing the names, locations, and redshifts for each supernova of interest.
 
-* `output_file` : The directory where any generated output files should be written to.
+* `output_file` : The file name of the output files.
 
 * `fits_directory` : A directory containing the .fits files used to calculate surface brightness. The script will automatically search through all sub directories. To change this behavior, alter the code following the comment `#We create a list of .fits files to perform photometry on`
 
