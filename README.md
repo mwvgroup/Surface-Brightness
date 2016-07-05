@@ -2,7 +2,7 @@
 
 ### Project Description:
 
-Using observations from [Galex] (http://galex.stsci.edu/) in the near and far UV, we calculate the surface brightness of a 1kpc radius region surrounding individual supernovae. The surface brightness of a 5kpc radius region is also calculated for comparison with [Kelly et al. 2015] (http://arxiv.org/abs/1410.0961). Results are found by using the [photutils package] (http://photutils.readthedocs.io/en/latest/) to perform photometry on [int type] (http://galex.stsci.edu/gr6/?page=ddfaq) .fits files published by Galex. Values are reported for 86 type 1a supernova, including 46 out of the 94 supernova considered by [Friedman et al 2015] (http://arxiv.org/abs/1408.0465). 
+Using observations from [Galex] (http://galex.stsci.edu/) in the near and far UV, we calculate the surface brightness of a 1kpc radius region surrounding individual supernovae. The surface brightness of a 5kpc radius region is also calculated for comparison with [Kelly et al. 2015] (http://arxiv.org/abs/1410.0961). Results are found by using the [photutils package] (http://photutils.readthedocs.io/en/latest/) to perform photometry on [int type] (http://galex.stsci.edu/gr6/?page=ddfaq) .fits files published by Galex. 
 
 ### Code Overview:
 
