@@ -1,6 +1,6 @@
 File Path,Issue
-/Users/Daniel/Documents/Surface-Brightness/fits files/Friedman Supernova/6371302826529783808/AIS_11_sg40-fd-int.fits,Failed Check File
-/Users/Daniel/Documents/Surface-Brightness/fits files/Friedman Supernova/6371302826529783808/AIS_11_sg40-nd-int.fits,Failed Check File
+/Users/Daniel/Documents/Surface-Brightness/fits files/Friedman Supernova/6378656383918669824/AIS_220_sg62-fd-int.fits,Failed Check File
+/Users/Daniel/Documents/Surface-Brightness/fits files/Friedman Supernova/6378656383918669824/AIS_220_sg62-nd-int.fits,Failed Check File
 /Users/Daniel/Documents/Surface-Brightness/fits files/Friedman Supernova/failed check file/2422763014190006272/MISDR1_18849_0458-fd-int.fits,Failed Check File
 /Users/Daniel/Documents/Surface-Brightness/fits files/Friedman Supernova/failed check file/2422763014190006272/MISDR1_18849_0458-nd-int.fits,Failed Check File
 /Users/Daniel/Documents/Surface-Brightness/fits files/Friedman Supernova/failed check file/2457736280247631872/MIS2DFSGP_30513_0045-nd-int.fits,Failed Check File
@@ -90,8 +90,6 @@ File Path,Issue
 /Users/Daniel/Documents/Surface-Brightness/fits files/Friedman Supernova/failed check file/6379148907145854976/AIS_234_sg08-nd-int.fits,Failed Check File
 /Users/Daniel/Documents/Surface-Brightness/fits files/Friedman Supernova/failed check file/6379782241949581312/AIS_252_sg23-fd-int.fits,Failed Check File
 /Users/Daniel/Documents/Surface-Brightness/fits files/Friedman Supernova/failed check file/6379782241949581312/AIS_252_sg23-nd-int.fits,Failed Check File
-/Users/Daniel/Documents/Surface-Brightness/fits files/Friedman Supernova/failed check file/6380204457635872768/AIS_264_sg26-fd-int.fits,Failed Check File
-/Users/Daniel/Documents/Surface-Brightness/fits files/Friedman Supernova/failed check file/6380204457635872768/AIS_264_sg26-nd-int.fits,Failed Check File
 /Users/Daniel/Documents/Surface-Brightness/fits files/Friedman Supernova/failed check file/6380239702137503744/AIS_265_sg82-fd-int.fits,Failed Check File
 /Users/Daniel/Documents/Surface-Brightness/fits files/Friedman Supernova/failed check file/6380239702137503744/AIS_265_sg82-nd-int.fits,Failed Check File
 /Users/Daniel/Documents/Surface-Brightness/fits files/Friedman Supernova/failed check file/6380661896348958720/AIS_277_sg65-fd-int.fits,Failed Check File
@@ -164,6 +162,8 @@ File Path,Issue
 /Users/Daniel/Documents/Surface-Brightness/fits files/Friedman Supernova/no supernova/6399722960134864896/MISMWS_17263_0179-nd-int.fits,No Supernova Found
 /Users/Daniel/Documents/Surface-Brightness/fits files/Other Supernova/ASASSN-14ay/2/AIS_10/AIS_10_sg66-fd-int.fits,Failed Check File
 /Users/Daniel/Documents/Surface-Brightness/fits files/Other Supernova/ASASSN-14ay/2/AIS_10/AIS_10_sg66-nd-int.fits,Failed Check File
+/Users/Daniel/Documents/Surface-Brightness/fits files/Other Supernova/ASASSN-14iu/1/AIS_80/AIS_80_sg28-fd-int.fits,Failed Check File
+/Users/Daniel/Documents/Surface-Brightness/fits files/Other Supernova/ASASSN-14iu/1/AIS_80/AIS_80_sg28-nd-int.fits,Failed Check File
 /Users/Daniel/Documents/Surface-Brightness/fits files/Other Supernova/CSS130218:092354+385837/2/AIS_85/AIS_85_sg59-fd-int.fits,No Check File
 /Users/Daniel/Documents/Surface-Brightness/fits files/Other Supernova/CSS130317:082848+293031/2/AIS_215/AIS_215_sg72-fd-int.fits,No Check File
 /Users/Daniel/Documents/Surface-Brightness/fits files/Other Supernova/LSQ12fmx/5/SDSS_1179_181_18586/SDSS_1179_181_18586-fd-int.fits,Failed Check File
@@ -174,6 +174,8 @@ File Path,Issue
 /Users/Daniel/Documents/Surface-Brightness/fits files/Other Supernova/LSQ14act/2/AIS_344/AIS_344_sg27-nd-int.fits,Failed Check File
 /Users/Daniel/Documents/Surface-Brightness/fits files/Other Supernova/LSQ14age/2/AIS_230/AIS_230_sg66-fd-int.fits,Failed Check File
 /Users/Daniel/Documents/Surface-Brightness/fits files/Other Supernova/LSQ14age/2/AIS_230/AIS_230_sg66-nd-int.fits,Failed Check File
+/Users/Daniel/Documents/Surface-Brightness/fits files/Other Supernova/LSQ14fmg/2/AIS_151/AIS_151_sg12-fd-int.fits,Failed Check File
+/Users/Daniel/Documents/Surface-Brightness/fits files/Other Supernova/LSQ14fmg/2/AIS_151/AIS_151_sg12-nd-int.fits,Failed Check File
 /Users/Daniel/Documents/Surface-Brightness/fits files/Other Supernova/PS1-14xw/2/AIS_137/AIS_137_sg87-fd-int.fits,Failed Check File
 /Users/Daniel/Documents/Surface-Brightness/fits files/Other Supernova/PS1-14xw/2/AIS_137/AIS_137_sg87-nd-int.fits,Failed Check File
 /Users/Daniel/Documents/Surface-Brightness/fits files/Other Supernova/PS15mt/2/AIS_192/AIS_192_sg09-fd-int.fits,No Check File
@@ -235,8 +237,6 @@ File Path,Issue
 /Users/Daniel/Documents/Surface-Brightness/fits files/Other Supernova/SN2013bo/2/AIS_108/AIS_108_sg32-nd-int.fits,Failed Check File
 /Users/Daniel/Documents/Surface-Brightness/fits files/Other Supernova/SN2013bq/2/AIS_108/AIS_108_sg16-fd-int.fits,Failed Check File
 /Users/Daniel/Documents/Surface-Brightness/fits files/Other Supernova/SN2013bq/2/AIS_108/AIS_108_sg16-nd-int.fits,Failed Check File
-/Users/Daniel/Documents/Surface-Brightness/fits files/Other Supernova/SN2013bs/2/AIS_11/AIS_11_sg40-fd-int.fits,Failed Check File
-/Users/Daniel/Documents/Surface-Brightness/fits files/Other Supernova/SN2013bs/2/AIS_11/AIS_11_sg40-nd-int.fits,Failed Check File
 /Users/Daniel/Documents/Surface-Brightness/fits files/Other Supernova/SN2013bt/2/AIS_98/AIS_98_sg54-fd-int.fits,No Supernova Found
 /Users/Daniel/Documents/Surface-Brightness/fits files/Other Supernova/SN2013bt/2/AIS_98/AIS_98_sg54-nd-int.fits,No Supernova Found
 /Users/Daniel/Documents/Surface-Brightness/fits files/Other Supernova/SN2013bt/3/AIS_98/AIS_98_sg79-fd-int.fits,No Supernova Found
@@ -245,6 +245,8 @@ File Path,Issue
 /Users/Daniel/Documents/Surface-Brightness/fits files/Other Supernova/SN2013da/3/AIS_235/AIS_235_sg15-fd-int.fits,Failed Check File
 /Users/Daniel/Documents/Surface-Brightness/fits files/Other Supernova/SN2013da/3/AIS_235/AIS_235_sg15-nd-int.fits,Failed Check File
 /Users/Daniel/Documents/Surface-Brightness/fits files/Other Supernova/SN2013fj/2/AIS_151/AIS_151_sg05-fd-int.fits,Failed Check File
+/Users/Daniel/Documents/Surface-Brightness/fits files/Other Supernova/SN2013fj/3/AIS_151/AIS_151_sg12-fd-int.fits,Failed Check File
+/Users/Daniel/Documents/Surface-Brightness/fits files/Other Supernova/SN2013fj/3/AIS_151/AIS_151_sg12-nd-int.fits,Failed Check File
 /Users/Daniel/Documents/Surface-Brightness/fits files/Other Supernova/SN2013fn/2/AIS_248/AIS_248_sg13-fd-int.fits,Failed Check File
 /Users/Daniel/Documents/Surface-Brightness/fits files/Other Supernova/SN2013fn/2/AIS_248/AIS_248_sg13-nd-int.fits,Failed Check File
 /Users/Daniel/Documents/Surface-Brightness/fits files/Other Supernova/SN2013fw/2/DNE_EF_PEG/DNE_EF_PEG-fd-int.fits,Failed Check File
