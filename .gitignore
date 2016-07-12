@@ -1,6 +1,3 @@
-
-*.fits
-
 fits files/*
 
 .ipynb_checkpoints/*
@@ -8,3 +5,5 @@ fits files/*
 csv/*
 
 Code Snippets/.ipynb_checkpoints/*
+
+
