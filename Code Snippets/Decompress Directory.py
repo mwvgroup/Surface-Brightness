@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 import zipfile, os, gzip
 directory = "."
     
@@ -22,4 +22,3 @@ for path, subdirs, files in os.walk(directory):
             zip_ref.close()
             
             os.remove(os.path.join(path, name))
-
