@@ -16,6 +16,7 @@ sne_2015_to_2019 = 'https://raw.githubusercontent.com/astrocatalogs/sne-2015-201
 dir_list = [sne_1990_to_1999, sne_2000_to_2004, sne_2005_to_2009, sne_2010_to_2014, sne_2015_to_2019]
 
 #Create the input table of sn and an empty output table
+    #Note that the case of the supernova names in your input files matters
 sn_table = Table.read(sn_list_file, format='ascii.csv')
 data_table = Table(names = ['sn', 'z', 'RA', 'Dec'],
                    dtype = [object, object, object, object])
