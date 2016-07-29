@@ -1,10 +1,10 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 import zipfile, os, gzip
 directory = "."
     
 for path, subdirs, files in os.walk(directory):
     for name in files:
-        if ".gz" in name:
+        if ".gz" in name and '._' not in name
 
             inF = gzip.open(os.path.join(path, name), 'rb')
             data = inF.read()
@@ -16,10 +16,9 @@ for path, subdirs, files in os.walk(directory):
             
             os.remove(os.path.join(path, name))
             
-        elif ".zip" in name:
+        elif ".zip" in name and '._' not in name
             zip_ref = zipfile.ZipFile(os.path.join(path, name), 'r')
             zip_ref.extractall(path)
             zip_ref.close()
             
             os.remove(os.path.join(path, name))
-
