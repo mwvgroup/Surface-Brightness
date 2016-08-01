@@ -240,7 +240,7 @@ class surface_brightness():
             results.append(['error', fits_file, 'no skybg file'])
             return(results)
     
-    def create_tables(self, uv_type, directory, radius, show_list = False):
+    def create_tables(self, uv_type, directory, radius, print_progress = False):
         
         '''
         Perform photometry on a directory of .fits files and create two
@@ -314,13 +314,16 @@ class surface_brightness():
 
         #Perform photometry on each .fits file
         for fits_file in file_list:
-            if show_list == True:
+            if print_progress == True:
                 print(len(file_list), ':', fits_file, flush = True)
 
             p = self.photometry(fits_file, radius)
             for elt in p:
                 if elt[0] == 'error':
                     log.add_row([elt[1], elt[2]])
+                    
+                    if print_progress == True:
+                        print('error', elt[2], '\n', flush = True)
 
                 else:
                     #We calculate the values to be entered in the table
@@ -372,77 +375,85 @@ class surface_brightness():
         Returns:
             None
         '''
+        try:
+            label = uv_type + ' ' + str(radius) + 'kpc '
 
-        label = uv_type + ' ' + str(radius) + 'kpc '
+            if 'N' in uv_type.upper(): plot_name = 'NUV Surface Brightness of SN Local Enviornments'
+            elif 'F' in uv_type.upper(): plot_name = 'FUV Surface Brightness of SN Local Enviornments'
 
-        if 'N' in uv_type.upper(): plot_name = 'NUV Surface Brightness of SN Local Enviornments'
-        elif 'F' in uv_type.upper(): plot_name = 'FUV Surface Brightness of SN Local Enviornments'
+            plt.figure(1)
+            plt.xlabel('Redshift')
+            plt.ylabel(str(data_table[label + 'Surface Brightness'].unit))
+            plt.title(plot_name)
 
-        plt.figure(1)
-        plt.xlabel('Redshift')
-        plt.ylabel(str(data_table[label + 'Surface Brightness'].unit))
-        plt.title(plot_name)
+            plt.figure(2)
+            plt.xlabel('Redshift')
+            plt.ylabel(str(data_table[label + 'Luminosity'].unit))
+            plt.title(plot_name)
 
-        plt.figure(2)
-        plt.xlabel('Redshift')
-        plt.ylabel(str(data_table[label + 'Luminosity'].unit))
-        plt.title(plot_name)
+            for row in data_table:
+                if row[label + 'Surface Brightness'] > 0:
+                    sigma = row['Flux'] / row['Flux Error']
+                    if sigma <= 3:
 
-        for row in data_table:
-            if row[label + 'Surface Brightness'] > 0:
-                sigma = row['Flux'] / row['Flux Error']
-                if sigma <= 3:
+                        plt.figure(1)
+                        plt.semilogy(row['Redshift'],
+                                     row[label + 'Surface Brightness'],
+                                     marker = u'$\u21a7$',
+                                     markeredgecolor='lightgrey',
+                                     color = 'lightgrey')
 
-                    plt.figure(1)
-                    plt.semilogy(row['Redshift'],
-                                 row[label + 'Surface Brightness'],
-                                 marker = u'$\u21a7$',
-                                 markeredgecolor='lightgrey',
-                                 color = 'lightgrey')
+                        plt.figure(2)
+                        plt.semilogy(row['Redshift'],
+                                     row[label + 'Luminosity'],
+                                     marker = u'$\u21a7$',
+                                     markeredgecolor='lightgrey',
+                                     color = 'lightgrey')
 
-                    plt.figure(2)
-                    plt.semilogy(row['Redshift'],
-                                 row[label + 'Luminosity'],
-                                 marker = u'$\u21a7$',
-                                 markeredgecolor='lightgrey',
-                                 color = 'lightgrey')
+            for row in data_table:
+                if row[label + 'Surface Brightness'] > 0:
+                    sigma = row['Flux'] / row['Flux Error']
+                    if sigma > 3:
+                        error = (row[label + 'Surface Brightness Error'],
+                                 row[label + 'Luminosity Error'])
 
-        for row in data_table:
-            if row[label + 'Surface Brightness'] > 0:
-                sigma = row['Flux'] / row['Flux Error']
-                if sigma > 3:
-                    error = (row[label + 'Surface Brightness Error'],
-                             row[label + 'Luminosity Error'])
+                        plt.figure(1)
+                        plt.semilogy(row['Redshift'],
+                                     row[label + 'Surface Brightness'],
+                                     marker = '.',
+                                     color = 'black')
 
-                    plt.figure(1)
-                    plt.semilogy(row['Redshift'],
-                                 row[label + 'Surface Brightness'],
-                                 marker = '.',
-                                 color = 'black')
+                        plt.errorbar(row['Redshift'],
+                                     row[label + 'Surface Brightness'],
+                                     yerr = error[0],
+                                     color = 'black',
+                                     linestyle = '')
 
-                    plt.errorbar(row['Redshift'],
-                                 row[label + 'Surface Brightness'],
-                                 yerr = error[0],
-                                 color = 'black',
-                                 linestyle = '')
+                        plt.figure(2)
+                        plt.semilogy(row['Redshift'],
+                                     row[label + 'Luminosity'],
+                                     marker = '.',
+                                     color = 'black')
 
-                    plt.figure(2)
-                    plt.semilogy(row['Redshift'],
-                                 row[label + 'Luminosity'],
-                                 marker = '.',
-                                 color = 'black')
+                        plt.errorbar(row['Redshift'],
+                                     row[label + 'Luminosity'],
+                                     yerr = error[1],
+                                     color = 'black',
+                                     linestyle = '')
 
-                    plt.errorbar(row['Redshift'],
-                                 row[label + 'Luminosity'],
-                                 yerr = error[1],
-                                 color = 'black',
-                                 linestyle = '')
+            plt.figure(1)
+            plt.savefig(uv_type + ' plot (arcsec).pdf')
 
-        plt.figure(1)
-        plt.savefig(uv_type + ' plot (arcsec).pdf')
+            plt.figure(2)
+            plt.savefig(uv_type + ' plot (kpc).pdf')
 
-        plt.figure(2)
-        plt.savefig(uv_type + ' plot (kpc).pdf')
+            plt.close("all")
+    
+        except KeyError as e:
+            if 'Redshift' in str(e): raise KeyError("Input table missing column 'Redshift'")
+            elif 'Flux Error' in str(e): raise KeyError("Input table missing column 'Flux Error'")
+            elif 'Flux' in str(e): raise KeyError("Input table missing column 'Flux'")
+            elif 'Surface Brightness' in str(e) or 'Luminosity' in str(e): 
+                raise KeyError('Input table missing column ' + str(e))
 
-        plt.close("all")
-
+            else: raise KeyError(str(e))
