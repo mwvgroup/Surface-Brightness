@@ -19,10 +19,11 @@ from matplotlib.backends.backend_pdf import PdfPages
 class surface_brightness():
     
     def __init__(self, cord_dict = {}, red_dict = {}):
-        #Make sure we have redshift and coordinates of each supernova
+        
+        #Make sure we have redshift and coordinates for each supernova
         if cord_dict.keys() == red_dict.keys():
-            self.cord_dict = cord_dict #Dict of supernova coordinates
-            self.red_dict = red_dict #Dict of supernova redshifts
+            self.cord_dict = cord_dict #Dictionary of supernova coordinates
+            self.red_dict = red_dict #Dictionary of supernova redshifts
         
         else:
             raise ValueError('''Keys in coordinate and redshift dictionaries
@@ -31,15 +32,15 @@ class surface_brightness():
     def conv_error(self, val, err):
     
         '''
-        Find the error in a conversion factor from kpc^2 to arcmin^2 using a
-        black box error method.
+        Use a black box error method to find the uncertanty in
+        astropy.cosmology.WMAP9.kpc_comoving_per_arcmin(). 
     
         Args:
-            val (float): A redshift value.
-            err (float): Error in the redshift.
+            val (float): A redshift value
+            err (float): Error in the redshift
         
         Returns:
-            error (float): Error in the conversion factor.
+            error (float): Error in the conversion factor
         '''
         
         diff = (cosmo.kpc_comoving_per_arcmin(val + err)**2
@@ -51,8 +52,8 @@ class surface_brightness():
     def lum_dist_error(self, val, err):
         
         '''
-        Find the error in luminosity distance by using a black box error
-        method.
+        Use a black box error method to find the uncertanty in
+        astropy.cosmology.WMAP9.luminosity_distance().
         
         Args:
             val (float): A redshift value
@@ -71,8 +72,8 @@ class surface_brightness():
     def flux_error(self, pho_val, pho_err, conv_val):
         
         '''
-        Find error in the calculated flux due to error in the measured
-        photon counts per second and flux conversion factor.
+        Find the statistical error in a flux value calculated from average
+        photon counts per second.
         
         Args:
             pho_val  (float): Average photon counts per second
@@ -84,20 +85,21 @@ class surface_brightness():
             error (float): Error in the associated flux value
         '''
         
-        error = (conv_val * pho_err)**2
+        error = (conv_val * pho_err)
         return(error)
     
     def luminosity_error(self, flux_val, flux_err, dist_val, dist_err):
         
         '''
-        Find error in the calculated Luminosity due error in the flux and
-        luminosity distance
+        
+        Find the error in a luminosity value due to uncertanty in flux and
+        luminosity distance.
         
         Args:
-            flux_val (float): Average photon counts per second
-            flux_err (float): Error in val
-            dist_val (float): Comoving distance
-            dist_err (float): Error in comoving distance
+            flux_val (float): Flux
+            flux_err (float): Error in Flux
+            dist_val (float): Luminosity distance
+            dist_err (float): Error in luminosity distance
         
         Returns:
             error (float): Error in the luminosity
@@ -111,7 +113,9 @@ class surface_brightness():
     def surf_brightness_error(self, lum_val, lum_err, conv_val, conv_err):
         
         '''
-        Find the error in surface brightness
+        Find the error in the surface brightness of a supernova enviornment
+        due to uncertanties in luminosity and
+        astropy.cosmology.WMAP9.kpc_comoving_per_arcmin().
         
         Args:
             lum_val  (float): Luminosity of a supernova environment
@@ -131,34 +135,36 @@ class surface_brightness():
     def zero_check(self, fits_file, cordinate, r):
         
         '''
-        Perform photometry on a wt type .fits file and checks if there are
-        data pixels in an aperture.
+        Perform photometry on a exp type .fits file and check if there are
+        data pixels in an aperture. Return a number code that corresponds
+        to the result: 0 = no exp file found, 1 = data pixels found inside
+        the aperture, 2 = no data pixels found in the aperture
         
         Args:
-            fits_file (str)     : File path of a .fits file
+            fits_file (str)     : File path of an int type .fits file
             cordinate (SkyCoord): Coordinate of a supernova in degrees
             r         (Quantity): Radius of a photometry aperture in arcmin
         
         Returns:
-            'no check file' (str) : Returned if there is no check file
-            in_file         (bool): [supernova name(string),
-                                     photometry value (float),
-                                     exposure time (float)]
+            result (int): A number code as outlined in the description
         '''
         
-        if os.path.isfile(fits_file.replace('d-int', 'd-exp')):
-            with fits.open(fits_file.replace('d-int', 'd-exp')) as hdulist:
+        if os.path.isfile(fits_file.replace("d-int", "d-exp")):
+            with fits.open(fits_file.replace("d-int", "d-exp")) as exp_file:
+                
                 aperture = SkyCircularAperture(cordinate, r)
-                phot_table = aperture_photometry(hdulist[0], aperture)
+                phot_table = aperture_photometry(exp_file[0], aperture)
             
-                if (phot_table[0][0] != 0) is True:
-                    return(True)
+                if phot_table[0][0] != 0:
+                    result = 1
             
-                else:
-                    return('no supernova found')
+                elif phot_table[0][0] == 0:
+                    result = 2
         
         else:
-            return('no check file')
+            result = 0
+        
+        return(result)
     
     def photometry(self, fits_file, radius):
         
@@ -167,23 +173,24 @@ class surface_brightness():
         
         Args:
             fits_file (str)  : File path of an int type .fits file
-            radius    (float): Radius of the desired aperture in kpc
+            radius    (float): Unitless radius of the desired aperture in kpc
         
         Returns:
             results (list): [supernova name (str),
+                             exposure time (float)
                              photometry value (float),
-                             exposure time (float)]
+                             photometry_error (float)]
             
-            results (list): ['error' (str),
+            results (list): ["error" (str),
                              fits file path (str),
                              error description (str)]
         '''
         
         results = []
         
-        if os.path.isfile(fits_file.replace('d-int', 'd-skybg')):
+        if os.path.isfile(fits_file.replace("d-int", "d-skybg")):
             with fits.open(fits_file) as (int_file
-                    ), fits.open(fits_file.replace('d-int', 'd-skybg')) as (skybg_file
+                    ), fits.open(fits_file.replace("d-int", "d-skybg")) as (skybg_file
                     ):
     
                 wcs = WCS(fits_file)
@@ -201,24 +208,16 @@ class surface_brightness():
                         aperture = SkyCircularAperture(self.cord_dict[sn], r)
                         
                         #create an array of the error in each pixel
-                        exp_time = int_file[0].header['EXPTIME']
+                        exp_time = int_file[0].header["EXPTIME"]
                         int_error = np.sqrt(int_file[0].data / exp_time)
                         skybg_error = np.sqrt(skybg_file[0].data / exp_time)
                         
                         #Perform photometry
                         int_phot_table = aperture_photometry(int_file[0], aperture, error = int_error)
                         
-                        if int_phot_table[0][0] != 0:
-                            skybg_phot_table = aperture_photometry(skybg_file[0], aperture, error = skybg_error)
-                            
-                            photometry_sum = int_phot_table[0][0] - skybg_phot_table[0][0]
-                            photometry_error = np.sqrt(int_phot_table[0][1]**2 + skybg_phot_table[0][1]**2)
-                            
-                            results.append([sn, exp_time, photometry_sum, photometry_error])
-                        
-                        else:
+                        if int_phot_table[0][0] == 0:
                             check = self.zero_check(fits_file, self.cord_dict[sn], r)
-                            if check == True:
+                            if check == 1:
                                 skybg_phot_table = aperture_photometry(skybg_file[0], aperture, error = skybg_error)
                                 
                                 photometry_sum = int_phot_table[0][0] - skybg_phot_table[0][0]
@@ -226,38 +225,47 @@ class surface_brightness():
                                 
                                 results.append([sn, exp_time, photometry_sum, photometry_error])
                             
-                            else:
-                                results.append(['error', fits_file, check])
+                            elif check == 0:
+                                results.append(["error", fits_file, "no check file"])
+                        
+                        else:
+                            skybg_phot_table = aperture_photometry(skybg_file[0], aperture, error = skybg_error)
+                            
+                            photometry_sum = int_phot_table[0][0] - skybg_phot_table[0][0]
+                            photometry_error = np.sqrt(int_phot_table[0][1]**2 + skybg_phot_table[0][1]**2)
+                            
+                            results.append([sn, exp_time, photometry_sum, photometry_error])
             
             if results == []:
-                results.append(['error', fits_file, 'no supernova found'])
+                results.append(["error", fits_file, "no supernova found"])
                 return(results)
             
             else:
                 return(results)
             
         else:
-            results.append(['error', fits_file, 'no skybg file'])
+            results.append(["error", fits_file, "no skybg file"])
             return(results)
     
     def create_tables(self, uv_type, directory, radius, print_progress = False):
         
         '''
-        Perform photometry on a directory of .fits files and create two
-        tables. The first table contains the redshift, exposure time,
+        Perform photometry on a directory of .fits files and create a list
+        of two tables. The first table contains the redshift, exposure time,
         luminosity, and surface brightness for various supernova, along with
         the associated error values. The second table is a log outlining any
         files that do not contain a supernova or are missing checkfiles. If
-        show_list is set equal to true, the path each fits file will be
-        printed before performing photometry on it.
+        print_progress is set equal to true, the path each fits file will be
+        printed before performing photometry on along with the number of
+        remaining files.
         
         Args:
-            uv_type   (str)  : Specifies which type of uv to create a table
-                                   for. Use either 'NUV' or 'FUV'.
-            directory (str)  : A directory containing .fits files
-            radius    (float): Radius of desired photometry aperture in kpc
-            show_list (bool) : Whether or not to print the file path of each
-                                   fits file
+            uv_type        (str)  : Specifies which type of uv to create a table
+                                        for. Use either "NUV" or "FUV".
+            directory      (str)  : A directory containing .fits files
+            radius         (float): Radius of desired photometry aperture in kpc
+            print_progress (bool) : Whether or not to print the file path of each
+                                        fits file
 
         Returns:
             results (list): [Data table (Table), Log table (Table)]
@@ -268,40 +276,40 @@ class surface_brightness():
             raise ValueError('''Keys in coordinate and redshift dictionaries
                                 (self.cord_dict, self.red_dict) do not match''')
         
-        label = uv_type + ' ' + str(radius) + 'kpc '
+        label = uv_type + " " + str(radius) + "kpc "
 
         #Define the tables that will be returned by the function
-        log = Table(names = ['File Path', 'Issue'], dtype = [object, object])
-        out = Table(names = ['sn',
-                             'Redshift',
-                             'Redshift Error',
-                             label + 'Exposure Time',
-                             'Flux',
-                             'Flux Error',
-                             label + 'Luminosity',
-                             label + 'Luminosity Error',
-                             label + 'Surface Brightness',
-                             label + 'Surface Brightness Error'],
+        log = Table(names = ["File Path", "Issue"], dtype = [object, object])
+        out = Table(names = ["sn",
+                             "Redshift",
+                             "Redshift Error",
+                             label + "Exposure Time",
+                             "Flux",
+                             "Flux Error",
+                             label + "Luminosity",
+                             label + "Luminosity Error",
+                             label + "Surface Brightness",
+                             label + "Surface Brightness Error"],
 
-                    dtype = ('S70', 'float64', 'float64', 'float64', 'float64',
-                             'float64', 'float64', 'float64', 'float64', 'float64'))
+                    dtype = ("S70", "float64", "float64", "float64", "float64",
+                             "float64", "float64", "float64", "float64", "float64"))
 
-        out['Redshift'].unit = u.dimensionless_unscaled
-        out['Redshift Error'].unit = u.dimensionless_unscaled
-        out[label + 'Exposure Time'].unit = u.s
-        out['Flux'].unit =  u.erg / u.s / u.Angstrom / u.kpc / u.kpc / u.cm / u.cm / np.pi
-        out['Flux Error'].unit = u.erg / u.s / u.Angstrom / u.kpc / u.kpc / u.cm / u.cm / np.pi
-        out[label + 'Luminosity'].unit = u.erg / u.s / u.Angstrom / u.kpc / u.kpc
-        out[label + 'Luminosity Error'].unit = u.erg / u.s / u.Angstrom / u.kpc / u.kpc
-        out[label + 'Surface Brightness'].unit = u.erg / u.s / u.Angstrom / u.arcsec / u.arcsec
-        out[label + 'Surface Brightness Error'].unit = u.erg / u.s / u.Angstrom / u.arcsec / u.arcsec
+        out["Redshift"].unit = u.dimensionless_unscaled
+        out["Redshift Error"].unit = u.dimensionless_unscaled
+        out[label + "Exposure Time"].unit = u.s
+        out["Flux"].unit =  u.erg / u.s / u.Angstrom / u.kpc / u.kpc / u.cm / u.cm / np.pi
+        out["Flux Error"].unit = u.erg / u.s / u.Angstrom / u.kpc / u.kpc / u.cm / u.cm / np.pi
+        out[label + "Luminosity"].unit = u.erg / u.s / u.Angstrom / u.kpc / u.kpc
+        out[label + "Luminosity Error"].unit = u.erg / u.s / u.Angstrom / u.kpc / u.kpc
+        out[label + "Surface Brightness"].unit = u.erg / u.s / u.Angstrom / u.arcsec / u.arcsec
+        out[label + "Surface Brightness Error"].unit = u.erg / u.s / u.Angstrom / u.arcsec / u.arcsec
 
         #Set parameters that are specific to NUV or FUV observations
-        if 'N' in uv_type.upper():
+        if "N" in uv_type.upper():
             file_key = "nd-int" #A string distinguing galex file types
             flux_conv = 2.06 * 1e-16 #A conversion factor from counts per second to flux
 
-        elif 'F' in uv_type.upper():
+        elif "F" in uv_type.upper():
             file_key = "fd-int"
             flux_conv = 1.40 * 1e-15
 
@@ -309,21 +317,23 @@ class surface_brightness():
         file_list = []
         for path, subdirs, files in os.walk(directory):
             for name in files:
-                if file_key in name and len(name.split('.')) < 3:
+                if file_key in name and len(name.split(".")) < 3:
                     file_list.append(os.path.join(path, name))
-
+                    
+        count = len(file_list)
         #Perform photometry on each .fits file
         for fits_file in file_list:
             if print_progress == True:
-                print(len(file_list), ':', fits_file, flush = True)
+                print(count, ":", fits_file, flush = True)
+                count -= 1
 
             p = self.photometry(fits_file, radius)
             for elt in p:
-                if elt[0] == 'error':
+                if elt[0] == "error":
                     log.add_row([elt[1], elt[2]])
                     
                     if print_progress == True:
-                        print('error', elt[2], '\n', flush = True)
+                        print("error", elt[2], "\n", flush = True)
 
                 else:
                     #We calculate the values to be entered in the table
@@ -352,11 +362,9 @@ class surface_brightness():
                     out.add_row([elt[0], redshift, redshift_err, elt[1], flux, flux_err,
                                  lum, lum_err, sbrightness, sbrightness_err])
 
-            file_list.remove(fits_file)
-
-        out.sort(label + 'Surface Brightness Error')
-        out_unique = unique(out, keys = 'sn')
-        out_unique.sort('sn')
+        out.sort(label + "Surface Brightness Error")
+        out_unique = unique(out, keys = "sn")
+        out_unique.sort("sn")
 
         return([out_unique, log])
 
@@ -370,90 +378,92 @@ class surface_brightness():
 
         Args:
             data_table (Table): Data table returned by create_table()
-            uv_type    (str)  : Specifies if the data is for 'NUV' or 'FUV'.
+            uv_type    (str)  : Specifies if the data is for "NUV" or "FUV".
+            radius     (float): The radius used to generate data_table
 
         Returns:
             None
         '''
+        
         try:
-            label = uv_type + ' ' + str(radius) + 'kpc '
+            label = uv_type + " " + str(radius) + "kpc "
 
-            if 'N' in uv_type.upper(): plot_name = 'NUV Surface Brightness of SN Local Enviornments'
-            elif 'F' in uv_type.upper(): plot_name = 'FUV Surface Brightness of SN Local Enviornments'
+            if "N" in uv_type.upper(): plot_name = "NUV Surface Brightness of" + str(radius) + "kpc SN Enviornments"
+            elif "F" in uv_type.upper(): plot_name = "FUV Surface Brightness of" + str(radius) + "kpc SN Enviornments"
 
             plt.figure(1)
-            plt.xlabel('Redshift')
-            plt.ylabel(str(data_table[label + 'Surface Brightness'].unit))
+            plt.xlabel("Redshift")
+            plt.ylabel(str(data_table[label + "Surface Brightness"].unit))
             plt.title(plot_name)
 
             plt.figure(2)
-            plt.xlabel('Redshift')
-            plt.ylabel(str(data_table[label + 'Luminosity'].unit))
+            plt.xlabel("Redshift")
+            plt.ylabel(str(data_table[label + "Luminosity"].unit))
             plt.title(plot_name)
 
             for row in data_table:
-                if row[label + 'Surface Brightness'] > 0:
-                    sigma = row['Flux'] / row['Flux Error']
+                if row[label + "Surface Brightness"] > 0:
+                    sigma = row["Flux"] / row["Flux Error"]
                     if sigma <= 3:
 
                         plt.figure(1)
-                        plt.semilogy(row['Redshift'],
-                                     row[label + 'Surface Brightness'],
-                                     marker = u'$\u21a7$',
-                                     markeredgecolor='lightgrey',
-                                     color = 'lightgrey')
+                        plt.semilogy(row["Redshift"],
+                                     row[label + "Surface Brightness"],
+                                     marker = u"$\u21a7$",
+                                     markeredgecolor="lightgrey",
+                                     color = "lightgrey")
 
                         plt.figure(2)
-                        plt.semilogy(row['Redshift'],
-                                     row[label + 'Luminosity'],
-                                     marker = u'$\u21a7$',
-                                     markeredgecolor='lightgrey',
-                                     color = 'lightgrey')
+                        plt.semilogy(row["Redshift"],
+                                     row[label + "Luminosity"],
+                                     marker = u"$\u21a7$",
+                                     markeredgecolor="lightgrey",
+                                     color = "lightgrey")
 
             for row in data_table:
-                if row[label + 'Surface Brightness'] > 0:
-                    sigma = row['Flux'] / row['Flux Error']
+                if row[label + "Surface Brightness"] > 0:
+                    sigma = row["Flux"] / row["Flux Error"]
                     if sigma > 3:
-                        error = (row[label + 'Surface Brightness Error'],
-                                 row[label + 'Luminosity Error'])
+                        error = (row[label + "Surface Brightness Error"],
+                                 row[label + "Luminosity Error"])
 
                         plt.figure(1)
-                        plt.semilogy(row['Redshift'],
-                                     row[label + 'Surface Brightness'],
-                                     marker = '.',
-                                     color = 'black')
+                        plt.semilogy(row["Redshift"],
+                                     row[label + "Surface Brightness"],
+                                     marker = ".",
+                                     color = "black")
 
-                        plt.errorbar(row['Redshift'],
-                                     row[label + 'Surface Brightness'],
+                        plt.errorbar(row["Redshift"],
+                                     row[label + "Surface Brightness"],
                                      yerr = error[0],
-                                     color = 'black',
-                                     linestyle = '')
+                                     color = "black",
+                                     linestyle = "")
 
                         plt.figure(2)
-                        plt.semilogy(row['Redshift'],
-                                     row[label + 'Luminosity'],
-                                     marker = '.',
-                                     color = 'black')
+                        plt.semilogy(row["Redshift"],
+                                     row[label + "Luminosity"],
+                                     marker = ".",
+                                     color = "black")
 
-                        plt.errorbar(row['Redshift'],
-                                     row[label + 'Luminosity'],
+                        plt.errorbar(row["Redshift"],
+                                     row[label + "Luminosity"],
                                      yerr = error[1],
-                                     color = 'black',
-                                     linestyle = '')
+                                     color = "black",
+                                     linestyle = "")
 
             plt.figure(1)
-            plt.savefig(uv_type + ' plot (arcsec).pdf')
+            plt.savefig(str(radius) + "kpc " + uv_type + " plot (arcsec).pdf")
 
             plt.figure(2)
-            plt.savefig(uv_type + ' plot (kpc).pdf')
+            plt.savefig(str(radius) + "kpc " + uv_type + " plot (kpc).pdf")
 
             plt.close("all")
     
         except KeyError as e:
-            if 'Redshift' in str(e): raise KeyError("Input table missing column 'Redshift'")
-            elif 'Flux Error' in str(e): raise KeyError("Input table missing column 'Flux Error'")
-            elif 'Flux' in str(e): raise KeyError("Input table missing column 'Flux'")
-            elif 'Surface Brightness' in str(e) or 'Luminosity' in str(e): 
-                raise KeyError('Input table missing column ' + str(e))
+            if "Redshift" in str(e): raise KeyError("Input table missing column 'Redshift'")
+            elif "Flux Error" in str(e): raise KeyError("Input table missing column 'Flux Error'")
+            elif "Flux" in str(e): raise KeyError("Input table missing column 'Flux'")
+            elif "Surface Brightness" in str(e) or "Luminosity" in str(e): 
+                raise KeyError("Input table missing column " + str(e))
 
             else: raise KeyError(str(e))
