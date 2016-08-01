@@ -1,18 +1,22 @@
 # Calculating Near and Far UV Surface Brightness for Local Environments of Supernovae
 
 
-## Note: This readme is out of date.
-
-
 ### Project Description:
 
-Using observations from [Galex] (http://galex.stsci.edu/) in the near and far UV, we calculate the surface brightness of a 1kpc radius region surrounding individual supernovae. The surface brightness of a 5kpc radius region is also calculated for comparison with [Kelly et al. 2015] (http://arxiv.org/abs/1410.0961). Results are found by using the [photutils package] (http://photutils.readthedocs.io/en/latest/) to perform photometry on [int type] (http://galex.stsci.edu/gr6/?page=ddfaq) .fits files published by Galex. 
+Using observations from [Galex] (http://galex.stsci.edu/) in the near and far UV, we calculate the surface brightness of regions surrounding individual supernovae. The surface brightness of a 5kpc radius region is also calculated for comparison with [Kelly et al. 2015] (http://arxiv.org/abs/1410.0961). Results are found by using the [photutils package] (http://photutils.readthedocs.io/en/latest/) to perform photometry on [int type] (http://galex.stsci.edu/gr6/?page=ddfaq) .fits files published by Galex. 
 
 ### Code Overview:
 
+##### The surface brightness class
+
+Surface brightness values are calculated using the `surface_brightness` class from [surface_brightness.py] (https://github.com/mwvgroup/Surface-Brightness/blob/master/surface_brightness.py). The `surface_brightness` class can be initiated without any arguments, but it is recomended create an instance as
+
+    brightness = surface_brightness(cord_dict, red_dict)
+
+
 ##### How to use it
 
-Surface brightness values are calculated using [Surface Brightness.ipynb] (https://github.com/mwvgroup/Surface-Brightness/blob/master/Surface%20Brightness.ipynb). To use the code, first set the value of parameters located after the comment `#User set parameters`. These parameters include:
+To use the code, first set the value of parameters located after the comment `#User set parameters`. These parameters include:
 
 * `region_file` : The file path of a .reg file containing the names, locations, and redshifts for each supernova of interest.
 

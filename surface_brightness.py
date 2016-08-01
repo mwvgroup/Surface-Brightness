@@ -228,7 +228,7 @@ class surface_brightness():
                             
                             else:
                                 results.append(['error', fits_file, check])
-                            
+            
             if results == []:
                 results.append(['error', fits_file, 'no supernova found'])
                 return(results)
@@ -247,13 +247,17 @@ class surface_brightness():
         tables. The first table contains the redshift, exposure time,
         luminosity, and surface brightness for various supernova, along with
         the associated error values. The second table is a log outlining any
-        files that do not contain a supernova or are missing checkfiles.
+        files that do not contain a supernova or are missing checkfiles. If
+        show_list is set equal to true, the path each fits file will be
+        printed before performing photometry on it.
         
         Args:
             uv_type   (str)  : Specifies which type of uv to create a table
                                    for. Use either 'NUV' or 'FUV'.
             directory (str)  : A directory containing .fits files
             radius    (float): Radius of desired photometry aperture in kpc
+            show_list (bool) : Whether or not to print the file path of each
+                                   fits file
 
         Returns:
             results (list): [Data table (Table), Log table (Table)]
