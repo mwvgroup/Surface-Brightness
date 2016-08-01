@@ -1,5 +1,9 @@
 # Calculating Near and Far UV Surface Brightness for Local Environments of Supernovae
 
+
+## Note: This readme is out of date.
+
+
 ### Project Description:
 
 Using observations from [Galex] (http://galex.stsci.edu/) in the near and far UV, we calculate the surface brightness of a 1kpc radius region surrounding individual supernovae. The surface brightness of a 5kpc radius region is also calculated for comparison with [Kelly et al. 2015] (http://arxiv.org/abs/1410.0961). Results are found by using the [photutils package] (http://photutils.readthedocs.io/en/latest/) to perform photometry on [int type] (http://galex.stsci.edu/gr6/?page=ddfaq) .fits files published by Galex. 
@@ -20,7 +24,7 @@ Surface brightness values are calculated using [Surface Brightness.ipynb] (https
 
 The code begins by walking through the directory `fits_directory` and building a list of .fits files to be analyzed. Files are only added to this list if the filename contains either 'nd-int' or 'fd-int', distinguishing int type files with observations in the near and far UV respectively. After compiling the list, the script uses a .reg file to build a dictionary of redshifts and coordinates for each supernova of interest. The function `photometry` uses these coordinates to check each of the .fits files for an observed supernova and performs photometry using the [photutils package] (http://photutils.readthedocs.io/en/latest/).
 
-The int type .fits files used in this project contain a circular collection of pixels corresponding to the observing telescope's field of view ([here is an example image] (https://github.com/mwvgroup/Surface-Brightness/blob/master/ds9.jpg)). All pixels outside this field of view are assigned a value of 0. If the photometry process returns 0, there is no immediate way of knowing if the corresponding supernova (and by extension the photometry aperture) is within the field of view. For such cases the script will use the function `zero_check` to perform photometry on a secondary check file. By default, the check file used is a wt type .fits file where zero valued pixels only occur outside the field of view. If performing photometry on the check file yields a non-zero value, then the aperture is deemed to be within the telescope's field of view.
+The int type .fits files used in this project contain a circular collection of pixels corresponding to the observing telescope's field of view ([here is an example image] (https://github.com/mwvgroup/Surface-Brightness/blob/master/example.jpg)). All pixels outside this field of view are assigned a value of 0. If the photometry process returns 0, there is no immediate way of knowing if the corresponding supernova (and by extension the photometry aperture) is within the field of view. For such cases the script will use the function `zero_check` to perform photometry on a secondary check file. By default, the check file used is a wt type .fits file where zero valued pixels only occur outside the field of view. If performing photometry on the check file yields a non-zero value, then the aperture is deemed to be within the telescope's field of view.
 
 Using the photometry results, the corresponding flux, luminosity, and surface brightness values are calculated and added to a table using the function `create_tables`. If more than one .fits file contains a given supernova, `create_tables` will only include the surface brightness value with the smallest error. `create_tables` is run four times to create tables for observations in the near and far UV using a 1kpc and 5kpc radius aperture. These tables are then combined and written to a single .csv file. The `create_tables` function will also create a table listing int type files that are either missing wt type check files, or do not have a supernova in their field of view. These tables are also combined and written to a .csv file. Using the 1kpc radius surface brightness values, the `create_plots` function is used to save logarithmic plots of surface brightness vs redshift to .pdf files. In total, four plots are saved corresponding to near or far UV surface brightness in units of (erg s-1 A-1 arcsec^-2) and (erg s-1 A-1 kpc^-2).
 
@@ -43,7 +47,7 @@ To find surface brightness in the desired units, we then convert from units of k
 
     arcmin = cosmo.kpc_comoving_per_arcmin(redshift).value**2 
     sbrightness = lum * arcmin / 3600
-	
+
 ### Repository File List:
 
 * Friedman data table.csv: A table listing supernova considered in [Friedman 2015] (http://arxiv.org/abs/1408.0465).
@@ -57,3 +61,10 @@ To find surface brightness in the desired units, we then convert from units of k
 * NUV/FUV plot (arcsec).pdf: A logarithmic plot of the values from Output NUV/FUV.csv showing surface brightness in units of (erg s-1 A-1 arcsec^-2) verses the redshift. Surface brightness in these plots is calculated using a 1kpc radius aperture.
 
 * output log.csv: A list of int type files and whether or not they missing wt type check files or do not have a supernova in their field of view.
+
+
+### ToDo:
+
+* doublecheck error propogation
+* rewrite function descriptions
+* check functionality
