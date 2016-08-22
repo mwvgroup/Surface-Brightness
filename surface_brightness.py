@@ -388,8 +388,8 @@ class surface_brightness():
         try:
             label = uv_type + " " + str(radius) + "kpc "
 
-            if "N" in uv_type.upper(): plot_name = "NUV Surface Brightness of" + str(radius) + "kpc SN Enviornments"
-            elif "F" in uv_type.upper(): plot_name = "FUV Surface Brightness of" + str(radius) + "kpc SN Enviornments"
+            if "N" in uv_type.upper(): plot_name = "NUV Surface Brightness of " + str(radius) + "kpc SN Enviornments"
+            elif "F" in uv_type.upper(): plot_name = "FUV Surface Brightness of " + str(radius) + "kpc SN Enviornments"
 
             plt.figure(1)
             plt.xlabel("Redshift")
